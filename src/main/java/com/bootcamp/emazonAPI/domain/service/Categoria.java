@@ -1,6 +1,8 @@
 package com.bootcamp.emazonAPI.domain.service;
 
-import com.bootcamp.emazonAPI.domain.exception.CampoVacioException;
+import com.bootcamp.emazonAPI.domain.exception.CharacterLimitExceededException;
+import com.bootcamp.emazonAPI.domain.exception.EmptyFieldException;
+
 import static java.util.Objects.requireNonNull;
 
 public class Categoria {
@@ -12,19 +14,19 @@ public class Categoria {
     public Categoria(long id, String nombre, String descripcion) {
 
             if (nombre == null || nombre.trim().isEmpty()) {
-                throw new CampoVacioException (ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE);
+                throw new EmptyFieldException(ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE);
             }
     
             if (nombre.trim().length() > ConstantesDominio.MAX_NOMBRE_TAMANO) {
-                throw new IllegalArgumentException(ConstantesDominio.CAMPO_NOMBRE_TAMANO_EXCEDIDO_MENSAJE);
+                throw new CharacterLimitExceededException(ConstantesDominio.CAMPO_NOMBRE_TAMANO_EXCEDIDO_MENSAJE);
             }
     
             if (descripcion == null || descripcion.isEmpty()) {
-                throw new IllegalArgumentException(ConstantesDominio.CAMPO_DESCRIPCION_NULL_MENSAJE);
+                throw new EmptyFieldException(ConstantesDominio.CAMPO_DESCRIPCION_NULL_MENSAJE);
             }
     
             if (descripcion.length() > ConstantesDominio.MAX_DESCRIPCION_TAMANO) {
-                throw new IllegalArgumentException(ConstantesDominio.CAMPO_DESCRIPCION_TAMANO_EXCEDIDO_MENSAJE);
+                throw new CharacterLimitExceededException(ConstantesDominio.CAMPO_DESCRIPCION_TAMANO_EXCEDIDO_MENSAJE);
             }
 
         this.id = id;
