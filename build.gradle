@@ -34,18 +34,29 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.3.2'
 	implementation 'org.springframework.boot:spring-boot-starter-web:3.3.2'
+
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	testImplementation 'org.mockito:mockito-core'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+	//implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
 }
 
-/* tasks.withType(JavaCompile) {
-    options.compilerArgs += ['-parameters']
-} */
+test {
+	testLogging {
+		// Muestra los resultados de todos los tests
+		events "passed", "skipped", "failed"
 
-/*tasks.withType(JavaExec) {
-	jvmArgs '-Djdk.instrument.traceUsage'
-}*/
+		// Muestra la causa de los fallos
+		exceptionFormat "full"
+
+		// Muestra los logs en la consola en tiempo real
+		showStandardStreams = true
+	}
+}
 
 tasks.named('test') {
 	useJUnitPlatform()
