@@ -10,9 +10,8 @@ public interface ICategoriaServicePort {
 
     Categoria obtenerCategoria(String nombre);
 
-    List<Categoria> listarCategorias(int page, int size);
+    List<Categoria> listarCategorias(int page, int size, String order);
 
-    List<Categoria> listarCategoriasfree();
 
 }
 

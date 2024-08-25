@@ -26,13 +26,8 @@ public class CategoriaUseCase implements ICategoriaServicePort {
     }
 
     @Override
-    public List<Categoria> listarCategorias(int page, int size){
-        return categoriaPersistencePort.listarCategorias(page,size);
-    }
-
-    @Override
-    public List<Categoria> listarCategoriasfree() {
-        return categoriaPersistencePort.listarCategoriasfree();
+    public List<Categoria> listarCategorias(int page, int size, String order){
+        return categoriaPersistencePort.listarCategorias(page,size,order);
     }
 
 }

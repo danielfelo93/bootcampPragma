@@ -3,6 +3,7 @@ package com.bootcamp.emazonapi.driven.adapter;
 import java.util.List;
 import java.util.logging.Logger;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
@@ -16,6 +17,7 @@ import com.bootcamp.emazonapi.driven.mapper.ICategoriaEntityMapper;
 import com.bootcamp.emazonapi.driven.repository.ICategoriaRepository;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 
 @RequiredArgsConstructor
 public class CategoriaAdaptador implements ICategoriaPersistencePort {
@@ -43,18 +45,29 @@ public class CategoriaAdaptador implements ICategoriaPersistencePort {
 
     
     @Override
-    public List<Categoria> listarCategorias(int page, int size) {
-        Pageable pagination = PageRequest.of(page, size);
-        List<CategoriaEntity> categorias = categoriaRepository.findAll(pagination).getContent();
+    public List<Categoria> listarCategorias(int page, int size, String order) {
+        Pageable pageable;
+
+        // Configura el Pageable basado en el parámetro de orden
+        if ("desc".equalsIgnoreCase(order)) {
+            pageable = PageRequest.of(page, size, Sort.by("nombre").descending());
+        } else if ("asc".equalsIgnoreCase(order)) {
+            pageable = PageRequest.of(page, size, Sort.by("nombre").ascending());
+        } else {
+            // Ordena por ID si el parámetro de orden está vacío o no es reconocido
+            pageable = PageRequest.of(page, size, Sort.by("id"));
+        }
+
+        // Obtén las categorías usando el Pageable configurado
+        Page<CategoriaEntity> categoriaPage = categoriaRepository.findAll(pageable);
+        List<CategoriaEntity> categorias = categoriaPage.getContent();
+
+        // Lanza excepción si no hay datos
         if (categorias.isEmpty()) {
             throw new NoDataFoundException();
         }
-        return categoriaEntityMapper.categoriaToCategoriaEntityList(categorias);
-    }
 
-    @Override
-    public List<Categoria> listarCategoriasfree() {
-        List<CategoriaEntity> categorias = categoriaRepository.findAll();
+        // Mapea las entidades a objetos de dominio Categoria
         return categoriaEntityMapper.categoriaToCategoriaEntityList(categorias);
     }
 

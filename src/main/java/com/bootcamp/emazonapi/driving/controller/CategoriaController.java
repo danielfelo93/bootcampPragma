@@ -44,14 +44,18 @@ public class CategoriaController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @Operation(summary = "Obtener todas las categorías", description = "Devuelve una lista de todas las categorías")
+    @Operation(summary = "Obtener todas las categorías", description = "Devuelve una lista de todas las categorías paginadas")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Categorías obtenidas con éxito"),
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
     })
     @GetMapping("/")
-    public ResponseEntity<List<CategoriaResponse>> obtenerCategorias(@RequestParam int page, @RequestParam int size) {
-        return ResponseEntity.ok(categoriaResponseMapper.categoriaToResponseList(categoriaServicePort.listarCategorias(page, size)));
+    public ResponseEntity<List<CategoriaResponse>> obtenerCategorias(@RequestParam(value = "page", defaultValue = "0") int page,
+                                                                     @RequestParam(value = "size", defaultValue = "3") int size,
+                                                                     @RequestParam(value = "order", defaultValue = "") String order) {
+        return ResponseEntity.ok(categoriaResponseMapper.categoriaToResponseList(categoriaServicePort.listarCategorias(page, size, order)));
         }
 
 }
+
+

@@ -16,4 +16,5 @@ public interface ICategoriaRepository extends JpaRepository<CategoriaEntity, Lon
     Optional<CategoriaEntity> findByNombre(String nombre);
     Page<CategoriaEntity> findAll(Pageable pageable);
 
+
 }

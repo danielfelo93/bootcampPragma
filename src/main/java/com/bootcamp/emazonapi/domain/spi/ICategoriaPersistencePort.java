@@ -10,9 +10,7 @@ public interface ICategoriaPersistencePort {
 
     Categoria obtenerCategoria(String nombre);
 
-    List<Categoria> listarCategorias(int page, int size);
-
-    List<Categoria> listarCategoriasfree();
+    List<Categoria> listarCategorias(int page, int size, String order);
 
 }
 

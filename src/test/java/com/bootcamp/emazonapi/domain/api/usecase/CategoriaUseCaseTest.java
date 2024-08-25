@@ -1,21 +1,23 @@
 package com.bootcamp.emazonapi.domain.api.usecase;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.times;
-
 import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
 import com.bootcamp.emazonapi.domain.exception.CharacterLimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
 
-
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class CategoriaUseCaseTest {
@@ -25,6 +27,72 @@ class CategoriaUseCaseTest {
 
     @InjectMocks
     private CategoriaUseCase categoriaUseCase;
+
+    private Categoria categoria1;
+    private Categoria categoria2;
+    private Categoria categoria3;
+
+    @BeforeEach
+    void setUp() {
+        categoria1 = new Categoria(1L, "Zapatos", "Descripción de Zapatos");
+        categoria2 = new Categoria(2L, "Ropa", "Descripción de Ropa");
+        categoria2 = new Categoria(3L, "Accesorios", "Descripción de Accesorios");
+    }
+
+    @Test
+    void shouldReturnCategoriasSuccessfullyById() {
+        // Arrange
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(categorias);
+
+        // Act
+        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
+
+        // Assert
+        assertEquals(categorias, result);
+        verify(categoriaPersistencePort).listarCategorias(0, 3, "");
+    }
+
+    @Test
+    void shouldReturnCategoriasSuccessfullyByNombreAsc() {
+        // Arrange
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "asc")).thenReturn(categorias);
+
+        // Act
+        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "asc");
+
+        // Assert
+        assertEquals(categorias, result);
+        verify(categoriaPersistencePort).listarCategorias(0, 3, "asc");
+    }
+
+    @Test
+    void shouldReturnCategoriasSuccessfullyByNombreDesc() {
+        // Arrange
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "desc")).thenReturn(categorias);
+
+        // Act
+        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "desc");
+
+        // Assert
+        assertEquals(categorias, result);
+        verify(categoriaPersistencePort).listarCategorias(0, 3, "desc");
+    }
+
+    @Test
+    void shouldReturnEmptyListWhenNoCategoriasFound() {
+        // Arrange
+        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(Arrays.asList());
+
+        // Act
+        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
+
+        // Assert
+        assertEquals(0, result.size());
+        verify(categoriaPersistencePort).listarCategorias(0, 3, "");
+    }
 
     @Test
     void shouldAddCategoriaSuccessfully() {
