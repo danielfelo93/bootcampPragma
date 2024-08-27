@@ -11,4 +11,5 @@ public final class ConstantesDominio {
 
     public static final int MAX_NOMBRE_TAMANO = 50;
     public static final int MAX_DESCRIPCION_TAMANO = 90;
+    public static final int MAX_DESCRIPCIONMARCA_TAMANO = 120;
 }

@@ -42,7 +42,7 @@ class CategoriaUseCaseTest {
     @Test
     void shouldReturnCategoriasSuccessfullyById() {
         // Arrange
-        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
         when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(categorias);
 
         // Act
@@ -56,7 +56,7 @@ class CategoriaUseCaseTest {
     @Test
     void shouldReturnCategoriasSuccessfullyByNombreAsc() {
         // Arrange
-        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
         when(categoriaPersistencePort.listarCategorias(0, 3, "asc")).thenReturn(categorias);
 
         // Act
@@ -70,7 +70,7 @@ class CategoriaUseCaseTest {
     @Test
     void shouldReturnCategoriasSuccessfullyByNombreDesc() {
         // Arrange
-        List<Categoria> categorias = Arrays.asList(categoria1, categoria2);
+        List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
         when(categoriaPersistencePort.listarCategorias(0, 3, "desc")).thenReturn(categorias);
 
         // Act

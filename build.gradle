@@ -45,6 +45,10 @@ dependencies {
 	//implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
 }
 
+/*springBoot {
+	mainClassName = 'com.example.emazonApiApplication'
+}*/
+
 test {
 	testLogging {
 		// Muestra los resultados de todos los tests
