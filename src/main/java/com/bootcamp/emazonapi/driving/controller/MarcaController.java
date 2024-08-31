@@ -24,7 +24,7 @@ public class MarcaController {
     private final IMarcaRequestMapper marcaRequestMapper;
     private final IMarcaResponseMapper marcaResponseMapper;
 
-    @Operation(summary = "Agregar una nueva categoría", description = "Crea una nueva categoría")
+    @Operation(summary = "Agregar una nueva marca", description = "Crea una nueva marca")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Categoría creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
@@ -35,9 +35,9 @@ public class MarcaController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @Operation(summary = "Obtener todas las categorías", description = "Devuelve una lista de todas las categorías paginadas")
+    @Operation(summary = "Obtener todas las marcas", description = "Devuelve una lista de todas las marcas paginadas")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Categorías obtenidas con éxito"),
+            @ApiResponse(responseCode = "200", description = "Marcas obtenidas con éxito"),
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
     })
     @GetMapping("/")

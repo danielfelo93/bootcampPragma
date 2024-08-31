@@ -1,6 +1,6 @@
 package com.bootcamp.emazonapi.domain.service;
 
-import com.bootcamp.emazonapi.domain.exception.CharacterLimitExceededException;
+import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
 
 import static java.util.Objects.requireNonNull;
@@ -18,7 +18,7 @@ public class Categoria {
             }
     
             if (nombre.trim().length() > ConstantesDominio.MAX_NOMBRE_TAMANO) {
-                throw new CharacterLimitExceededException(ConstantesDominio.CAMPO_NOMBRE_TAMANO_EXCEDIDO_MENSAJE);
+                throw new LimitExceededException(ConstantesDominio.CAMPO_NOMBRE_TAMANO_EXCEDIDO_MENSAJE);
             }
     
             if (descripcion == null || descripcion.isEmpty()) {
@@ -26,12 +26,12 @@ public class Categoria {
             }
     
             if (descripcion.length() > ConstantesDominio.MAX_DESCRIPCION_TAMANO) {
-                throw new CharacterLimitExceededException(ConstantesDominio.CAMPO_DESCRIPCION_TAMANO_EXCEDIDO_MENSAJE);
+                throw new LimitExceededException(ConstantesDominio.CAMPO_DESCRIPCION_TAMANO_EXCEDIDO_MENSAJE);
             }
 
         this.id = id;
         this.nombre = requireNonNull(nombre, ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE); 
-        this.descripcion = requireNonNull(descripcion, ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE);
+        this.descripcion = requireNonNull(descripcion, ConstantesDominio.CAMPO_DESCRIPCION_NULL_MENSAJE);
     }
 
 

@@ -1,5 +1,6 @@
 package com.bootcamp.emazonapi.driven.adapter;
 
+import com.bootcamp.emazonapi.config.Constants;
 import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
 import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
@@ -15,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @RequiredArgsConstructor
@@ -28,7 +30,7 @@ public class MarcaAdaptador implements IMarcaPersistencePort {
     @Override
     public void guardarMarca(Marca marca) {
         if (marcaRepository.findByNombre(marca.getNombre()).isPresent()) {
-            throw new ProductAlreadyExistsException();
+            throw new ProductAlreadyExistsException(Constants.MARCA_YA_EXISTE_EXCEPCION_MENSAJE);
         }
         MarcaEntity savedEntity = marcaRepository.save(marcaEntityMapper.marcaToMarcaEntity(marca));
         logger.info("ID after save: " + savedEntity.getId());
@@ -41,6 +43,11 @@ public class MarcaAdaptador implements IMarcaPersistencePort {
         return marcaEntityMapper.entityToMarca(marca);
     }
 
+    @Override
+    public Optional<Marca> obtenerMarcaPorId(Long id) {
+        Optional<MarcaEntity> marcaOptional = marcaRepository.findById(id);
+        return marcaOptional.map(marcaEntityMapper::entityToMarca);
+    }
     
     @Override
     public List<Marca> listarMarcas(int page, int size, String order) {

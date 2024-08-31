@@ -35,7 +35,7 @@ class MarcaUseCaseTest {
     void setUp() {
         marca1 = new Marca(1L, "Zapatos", "Descripción de Zapatos");
         marca2 = new Marca(2L, "Ropa", "Descripción de Ropa");
-        marca2 = new Marca(3L, "Accesorios", "Descripción de Accesorios");
+        marca3 = new Marca(3L, "Accesorios", "Descripción de Accesorios");
     }
 
     @Test

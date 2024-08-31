@@ -1,8 +1,10 @@
 package com.bootcamp.emazonapi.driven.adapter;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
+import com.bootcamp.emazonapi.config.Constants;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -30,7 +32,7 @@ public class CategoriaAdaptador implements ICategoriaPersistencePort {
     @Override
     public void guardarCategoria(Categoria categoria) {
         if (categoriaRepository.findByNombre(categoria.getNombre()).isPresent()) {
-            throw new ProductAlreadyExistsException();
+            throw new ProductAlreadyExistsException(Constants.CATEGORIA_YA_EXISTE_EXCEPCION_MENSAJE);
         }
         CategoriaEntity savedEntity = categoriaRepository.save(categoriaEntityMapper.categoriaToCategoriaEntity(categoria));
         logger.info("ID after save: " + savedEntity.getId());
@@ -43,7 +45,12 @@ public class CategoriaAdaptador implements ICategoriaPersistencePort {
         return categoriaEntityMapper.entityToCategoria(categoria);
     }
 
-    
+    @Override
+    public Optional<Categoria> obtenerCategoriaPorId(Long id) {
+        Optional<CategoriaEntity> categoriaOptional = categoriaRepository.findById(id);
+        return categoriaOptional.map(categoriaEntityMapper::entityToCategoria);
+    }
+
     @Override
     public List<Categoria> listarCategorias(int page, int size, String order) {
         Pageable pageable;

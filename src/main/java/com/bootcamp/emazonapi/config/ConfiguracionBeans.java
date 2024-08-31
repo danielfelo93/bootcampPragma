@@ -1,10 +1,16 @@
 package com.bootcamp.emazonapi.config;
 
+import com.bootcamp.emazonapi.domain.api.IArticuloServicePort;
 import com.bootcamp.emazonapi.domain.api.IMarcaServicePort;
+import com.bootcamp.emazonapi.domain.api.usecase.ArticuloUseCase;
 import com.bootcamp.emazonapi.domain.api.usecase.MarcaUseCase;
+import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazonapi.driven.adapter.ArticuloAdaptador;
 import com.bootcamp.emazonapi.driven.adapter.MarcaAdaptador;
+import com.bootcamp.emazonapi.driven.mapper.IArticuloEntityMapper;
 import com.bootcamp.emazonapi.driven.mapper.IMarcaEntityMapper;
+import com.bootcamp.emazonapi.driven.repository.IArticuloRepository;
 import com.bootcamp.emazonapi.driven.repository.IMarcaRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,6 +32,8 @@ public class ConfiguracionBeans {
     private final ICategoriaRepository categoriaRepository;
     private final IMarcaEntityMapper marcaEntityMapper;
     private final IMarcaRepository marcaRepository;
+    private final IArticuloEntityMapper articuloEntityMapper;
+    private final IArticuloRepository articuloRepository;
 
     @Bean
     public ICategoriaPersistencePort categoriaPersistencePort(){
@@ -42,6 +50,14 @@ public class ConfiguracionBeans {
 
     @Bean
     public IMarcaServicePort marcaServicePort() { return new MarcaUseCase(marcaPersistencePort());}
+
+    @Bean
+    public IArticuloPersistencePort articuloPersistencePort(){
+        return new ArticuloAdaptador(articuloRepository, articuloEntityMapper);
+    }
+
+    @Bean
+    public IArticuloServicePort articuloServicePort() { return new ArticuloUseCase(articuloPersistencePort(), categoriaPersistencePort(), marcaPersistencePort());}
 
 }
 
