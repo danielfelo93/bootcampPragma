@@ -1,6 +1,7 @@
 package com.bootcamp.emazonapi.driven.adapter;
 
 import com.bootcamp.emazonapi.config.Constants;
+import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
 import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
@@ -9,6 +10,7 @@ import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
 import com.bootcamp.emazonapi.driven.exceptions.ProductAlreadyExistsException;
 import com.bootcamp.emazonapi.driven.mapper.IMarcaEntityMapper;
 import com.bootcamp.emazonapi.driven.repository.IMarcaRepository;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -50,7 +52,7 @@ public class MarcaAdaptador implements IMarcaPersistencePort {
     }
     
     @Override
-    public List<Marca> listarMarcas(int page, int size, String order) {
+    public PagedResponse<Marca> listarMarcas(int page, int size, String order) {
         Pageable pageable;
 
         // Configura el Pageable basado en el parámetro de orden
@@ -73,7 +75,17 @@ public class MarcaAdaptador implements IMarcaPersistencePort {
         }
 
         // Mapea las entidades a objetos de dominio Marca
-        return marcaEntityMapper.marcaToMarcaEntityList(marcas);
+        List<Marca> marcaList = marcaEntityMapper.marcaToMarcaEntityList(marcas);
+
+        // Construye el objeto PagedResponse con los metadatos de paginación
+        return new PagedResponse<>(
+                marcaList,
+                marcaPage.getNumber(),
+                marcaPage.getSize(),
+                marcaPage.getTotalElements(),
+                marcaPage.getTotalPages(),
+                marcaPage.isLast()
+        );
     }
 
 }

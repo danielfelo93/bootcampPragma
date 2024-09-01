@@ -4,9 +4,7 @@ import com.bootcamp.emazonapi.domain.api.IArticuloServicePort;
 import com.bootcamp.emazonapi.domain.service.Articulo;
 import com.bootcamp.emazonapi.driving.dto.request.AddArticuloRequest;
 import com.bootcamp.emazonapi.driving.dto.response.*;
-import com.bootcamp.emazonapi.driving.mapper.IArticuloRequestMapper;
-import com.bootcamp.emazonapi.driving.mapper.IArticuloResponseMapper;
-import com.bootcamp.emazonapi.driving.mapper.IMarcaResponseMapper;
+import com.bootcamp.emazonapi.driving.mapper.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -27,6 +25,8 @@ public class ArticuloController {
     private final IArticuloServicePort articuloServicePort;
     private final IArticuloRequestMapper articuloRequestMapper;
     private final IArticuloResponseMapper articuloResponseMapper;
+    private final IArticuloCategoriaResponseMapper articuloCategoriaResponseMapper;
+    private final IArticuloMarcaResponseMapper articuloMarcaResponseMapper;
     private final IMarcaResponseMapper marcaResponseMapper;
 
     @Operation(summary = "Agregar un nuevo artículo", description = "Crea un nuevo artículo")
@@ -67,15 +67,26 @@ public class ArticuloController {
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
     })
     @GetMapping("/")
-    public ResponseEntity<List<ArticuloResponse>> obtenerArticulos(@RequestParam(value = "page", defaultValue = "0") int page,
+    public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulos(@RequestParam(value = "page", defaultValue = "0") int page,
                                                                      @RequestParam(value = "size", defaultValue = "3") int size,
                                                                      @RequestParam(value = "order", defaultValue = "") String order) {
 
         // Llamar al use case para obtener los artículos
-        List<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);
+        PagedResponse<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);
+
+        // Usar el mapper para convertir los artículos a ArticuloResponse
+        PagedResponse<ArticuloResponse> response = articuloResponseMapper.articuloToResponseList(articulos);
+
+        return ResponseEntity.ok(response);
+
+
+
+        /*// Llamar al use case para obtener los artículos
+        PagedResponse<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);
+
 
         // Convertir a DTO excluyendo la descripción
-        List<ArticuloResponse> response = articulos.stream()
+        List<ArticuloResponse> response = articulos.getContent().stream()
                 .map(articulo -> new ArticuloResponse(
                         articulo.getId(),
                         articulo.getNombre(),
@@ -91,7 +102,9 @@ public class ArticuloController {
                 ))
                 .collect(Collectors.toList());
 
-        return ResponseEntity.ok(response);
+        //aqui hay que crear la respuesta paginada antes de retornar
+
+        return ResponseEntity.ok((PagedResponse<ArticuloResponse>) response);*/
 
 
         }

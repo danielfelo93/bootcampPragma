@@ -12,6 +12,7 @@ import com.bootcamp.emazonapi.driven.entity.CategoriaEntity;
 import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
 import com.bootcamp.emazonapi.driven.repository.ICategoriaRepository;
 import com.bootcamp.emazonapi.driven.repository.IMarcaRepository;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -47,6 +48,10 @@ class ArticuloUseCaseTest {
     private Marca marca1;
     private Set<Categoria> categorias;
 
+    private void assertPagedResponseContentEquals(PagedResponse<Articulo> expected, PagedResponse<Articulo> actual) {
+        assertEquals(expected.getContent(), actual.getContent(), "Contenido no coincide");
+    }
+
     /*private Categoria categoria1;
     private Categoria categoria2;
     private Categoria categoria3;
@@ -74,13 +79,14 @@ class ArticuloUseCaseTest {
     void shouldReturnArticulosSuccessfullyById() {
         // Arrange
         List<Articulo> articulos = Arrays.asList(articulo1, articulo2, articulo3);
-        when(articuloPersistencePort.listarArticulos(0, 3, "")).thenReturn(articulos);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 3, 1, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, "")).thenReturn(pagedResponse);
 
         // Act
-        List<Articulo> result = articuloUseCase.listarArticulos(0, 3, "");
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, "");
 
         // Assert
-        assertEquals(articulos, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(articuloPersistencePort).listarArticulos(0, 3, "");
     }
 
@@ -88,13 +94,14 @@ class ArticuloUseCaseTest {
     void shouldReturnArticulosSuccessfullyByNombreAsc() {
         // Arrange
         List<Articulo> articulos = Arrays.asList(articulo1, articulo2, articulo3);
-        when(articuloPersistencePort.listarArticulos(0, 3, "asc")).thenReturn(articulos);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 3, 1, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, "asc")).thenReturn(pagedResponse);
 
         // Act
-        List<Articulo> result = articuloUseCase.listarArticulos(0, 3, "asc");
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, "asc");
 
         // Assert
-        assertEquals(articulos, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(articuloPersistencePort).listarArticulos(0, 3, "asc");
     }
 
@@ -102,26 +109,28 @@ class ArticuloUseCaseTest {
     void shouldReturnArticulosSuccessfullyByNombreDesc() {
         // Arrange
         List<Articulo> articulos = Arrays.asList(articulo1, articulo2, articulo3);
-        when(articuloPersistencePort.listarArticulos(0, 3, "desc")).thenReturn(articulos);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 3, 1, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, "desc")).thenReturn(pagedResponse);
 
         // Act
-        List<Articulo> result = articuloUseCase.listarArticulos(0, 3, "desc");
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, "desc");
 
         // Assert
-        assertEquals(articulos, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(articuloPersistencePort).listarArticulos(0, 3, "desc");
     }
 
     @Test
     void shouldReturnEmptyListWhenNoArticulosFound() {
         // Arrange
-        when(articuloPersistencePort.listarArticulos(0, 3, "")).thenReturn(Arrays.asList());
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(Arrays.asList(), 0, 3, 0, 0, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, "")).thenReturn(pagedResponse);
 
         // Act
-        List<Articulo> result = articuloUseCase.listarArticulos(0, 3, "");
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, "");
 
         // Assert
-        assertEquals(0, result.size());
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(articuloPersistencePort).listarArticulos(0, 3, "");
     }
 

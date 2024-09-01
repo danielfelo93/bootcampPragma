@@ -2,6 +2,7 @@ package com.bootcamp.emazonapi.driven.adapter;
 
 import com.bootcamp.emazonapi.config.Constants;
 import com.bootcamp.emazonapi.domain.service.Articulo;
+import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazonapi.driven.entity.ArticuloEntity;
 import com.bootcamp.emazonapi.driven.exceptions.ElementNotFoundException;
@@ -9,6 +10,7 @@ import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
 import com.bootcamp.emazonapi.driven.exceptions.ProductAlreadyExistsException;
 import com.bootcamp.emazonapi.driven.mapper.IArticuloEntityMapper;
 import com.bootcamp.emazonapi.driven.repository.IArticuloRepository;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -44,7 +46,7 @@ public class ArticuloAdaptador implements IArticuloPersistencePort {
 
     
     @Override
-    public List<Articulo> listarArticulos(int page, int size, String order) {
+    public PagedResponse<Articulo> listarArticulos(int page, int size, String order) {
         Pageable pageable;
 
         // Configura el Pageable basado en el parámetro de orden
@@ -67,7 +69,17 @@ public class ArticuloAdaptador implements IArticuloPersistencePort {
         }
 
         // Mapea las entidades a objetos de dominio Articulo
-        return articuloEntityMapper.articuloToArticuloEntityList(articulos);
+        List<Articulo> articuloList = articuloEntityMapper.articuloToArticuloEntityList(articulos);
+
+        // Construye el objeto PagedResponse con los metadatos de paginación
+        return new PagedResponse<>(
+                articuloList,
+                articuloPage.getNumber(),
+                articuloPage.getSize(),
+                articuloPage.getTotalElements(),
+                articuloPage.getTotalPages(),
+                articuloPage.isLast()
+        );
     }
 
 }

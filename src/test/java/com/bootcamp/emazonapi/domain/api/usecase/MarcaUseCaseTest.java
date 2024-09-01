@@ -2,8 +2,10 @@ package com.bootcamp.emazonapi.domain.api.usecase;
 
 import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
+import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,6 +33,10 @@ class MarcaUseCaseTest {
     private Marca marca2;
     private Marca marca3;
 
+    private void assertPagedResponseContentEquals(PagedResponse<Marca> expected, PagedResponse<Marca> actual) {
+        assertEquals(expected.getContent(), actual.getContent(), "Contenido no coincide");
+    }
+
     @BeforeEach
     void setUp() {
         marca1 = new Marca(1L, "Zapatos", "Descripción de Zapatos");
@@ -42,13 +48,14 @@ class MarcaUseCaseTest {
     void shouldReturnMarcasSuccessfullyById() {
         // GIVEN
         List<Marca> marcas = Arrays.asList(marca1, marca2, marca3);
-        when(marcaPersistencePort.listarMarcas(0, 3, "")).thenReturn(marcas);
+        PagedResponse<Marca> pagedResponse = new PagedResponse<>(marcas, 0, 3, 3, 1, true);
+        when(marcaPersistencePort.listarMarcas(0, 3, "")).thenReturn(pagedResponse);
 
         // WHEN
-        List<Marca> result = marcaUseCase.listarMarcas(0, 3, "");
+        PagedResponse<Marca> result = marcaUseCase.listarMarcas(0, 3, "");
 
         // THEN
-        assertEquals(marcas, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(marcaPersistencePort).listarMarcas(0, 3, "");
     }
 
@@ -56,13 +63,14 @@ class MarcaUseCaseTest {
     void shouldReturnMarcasSuccessfullyByNombreAsc() {
         // GIVEN
         List<Marca> marcas = Arrays.asList(marca1, marca2, marca3);
-        when(marcaPersistencePort.listarMarcas(0, 3, "asc")).thenReturn(marcas);
+        PagedResponse<Marca> pagedResponse = new PagedResponse<>(marcas, 0, 3, 3, 1, true);
+        when(marcaPersistencePort.listarMarcas(0, 3, "asc")).thenReturn(pagedResponse);
 
         // WHEN
-        List<Marca> result = marcaUseCase.listarMarcas(0, 3, "asc");
+        PagedResponse<Marca> result = marcaUseCase.listarMarcas(0, 3, "asc");
 
         // THEN
-        assertEquals(marcas, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(marcaPersistencePort).listarMarcas(0, 3, "asc");
     }
 
@@ -70,26 +78,28 @@ class MarcaUseCaseTest {
     void shouldReturnMarcasSuccessfullyByNombreDesc() {
         // GIVEN
         List<Marca> marcas = Arrays.asList(marca1, marca2, marca3);
-        when(marcaPersistencePort.listarMarcas(0, 3, "desc")).thenReturn(marcas);
+        PagedResponse<Marca> pagedResponse = new PagedResponse<>(marcas, 0, 3, 3, 1, true);
+        when(marcaPersistencePort.listarMarcas(0, 3, "desc")).thenReturn(pagedResponse);
 
         // WHEN
-        List<Marca> result = marcaUseCase.listarMarcas(0, 3, "desc");
+        PagedResponse<Marca> result = marcaUseCase.listarMarcas(0, 3, "desc");
 
         // THEN
-        assertEquals(marcas, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(marcaPersistencePort).listarMarcas(0, 3, "desc");
     }
 
     @Test
     void shouldReturnEmptyListWhenNoMarcasFound() {
         // GIVEN
-        when(marcaPersistencePort.listarMarcas(0, 3, "")).thenReturn(Arrays.asList());
+        PagedResponse<Marca> pagedResponse = new PagedResponse<>(Arrays.asList(), 0, 3, 0, 0, true);
+        when(marcaPersistencePort.listarMarcas(0, 3, "")).thenReturn(pagedResponse);
 
         // WHEN
-        List<Marca> result = marcaUseCase.listarMarcas(0, 3, "");
+        PagedResponse<Marca> result = marcaUseCase.listarMarcas(0, 3, "");
 
         // THEN
-        assertEquals(0, result.size());
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(marcaPersistencePort).listarMarcas(0, 3, "");
     }
 

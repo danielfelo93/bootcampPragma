@@ -3,6 +3,7 @@ package com.bootcamp.emazonapi.driving.controller;
 import com.bootcamp.emazonapi.domain.api.IMarcaServicePort;
 import com.bootcamp.emazonapi.driving.dto.request.AddMarcaRequest;
 import com.bootcamp.emazonapi.driving.dto.response.MarcaResponse;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import com.bootcamp.emazonapi.driving.mapper.IMarcaRequestMapper;
 import com.bootcamp.emazonapi.driving.mapper.IMarcaResponseMapper;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,9 +42,9 @@ public class MarcaController {
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
     })
     @GetMapping("/")
-    public ResponseEntity<List<MarcaResponse>> obtenerMarcas(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                                     @RequestParam(value = "size", defaultValue = "3") int size,
-                                                                     @RequestParam(value = "order", defaultValue = "") String order) {
+    public ResponseEntity<PagedResponse<MarcaResponse>> obtenerMarcas(@RequestParam(value = "page", defaultValue = "0") int page,
+                                                                      @RequestParam(value = "size", defaultValue = "3") int size,
+                                                                      @RequestParam(value = "order", defaultValue = "") String order) {
         return ResponseEntity.ok(marcaResponseMapper.marcaToResponseList(marcaServicePort.listarMarcas(page, size, order)));
         }
 

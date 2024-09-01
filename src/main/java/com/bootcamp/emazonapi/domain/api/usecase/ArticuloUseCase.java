@@ -7,6 +7,7 @@ import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 
 import java.util.HashSet;
 import java.util.List;
@@ -64,7 +65,7 @@ public class ArticuloUseCase implements IArticuloServicePort {
     }
 
     @Override
-    public List<Articulo> listarArticulos(int page, int size, String order){
+    public PagedResponse<Articulo> listarArticulos(int page, int size, String order){
         return articuloPersistencePort.listarArticulos(page,size,order);
     }
 
