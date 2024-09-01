@@ -8,10 +8,6 @@ import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
-import com.bootcamp.emazonapi.driven.entity.CategoriaEntity;
-import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
-import com.bootcamp.emazonapi.driven.repository.ICategoriaRepository;
-import com.bootcamp.emazonapi.driven.repository.IMarcaRepository;
 import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -52,13 +48,6 @@ class ArticuloUseCaseTest {
         assertEquals(expected.getContent(), actual.getContent(), "Contenido no coincide");
     }
 
-    /*private Categoria categoria1;
-    private Categoria categoria2;
-    private Categoria categoria3;
-    private Marca marca1;
-    private Marca marca2;
-    private Marca marca3;*/
-
     @BeforeEach
     void setUp() {
         marca1 = new Marca(1L, "MarcaEjemplo", "..................");
@@ -67,12 +56,6 @@ class ArticuloUseCaseTest {
         articulo1 = new Articulo(1L, "Zapatos", "Descripción de Zapatos", 1,new BigDecimal(1000), marca1, categorias);
         articulo2 = new Articulo(2L, "Camiseta", "Descripción de Camiseta", 2, new BigDecimal(2500), marca1, categorias);
         articulo2 = new Articulo(3L, "Collar", "Descripción de Collar",12, new BigDecimal(50000), marca1, categorias);
-        /*categoria1 = new Categoria(1L, "Ropa hombres", "Descripcion de ropa masculina" );
-        categoria2 = new Categoria(2L, "Zapatos hombres", "Descripcion de Zapatos masculinos" );
-        categoria3 = new Categoria(3L, "Accesorios hombres", "Descripcion de Accesorios masculinos" );
-        marca1 = new Marca(1L, "Zara", "Descripción de Zara");
-        marca2 = new Marca(2L, "Arturo Calle", "Descripción de Arturo Calle");
-        marca3 = new Marca(3L, "Ragged", "Descripción de Ragged");*/
     }
 
     @Test
@@ -120,8 +103,6 @@ class ArticuloUseCaseTest {
         verify(articuloPersistencePort).listarArticulos(0, 3, "desc");
     }
 
-
-
     @Test
     void shouldReturnEmptyListWhenNoArticulosFound() {
         // Arrange
@@ -137,6 +118,38 @@ class ArticuloUseCaseTest {
     }
 
     @Test
+    void shouldReturnArticulosSuccessfullyByCategoria() {
+        // Arrange
+        List<Articulo> articulos = Arrays.asList(articulo1, articulo2);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 2, 1, true);
+        String nombreCategoria = "CategoríaEjemplo";
+        when(articuloPersistencePort.listarArticulosPorCategoria(nombreCategoria, 0, 3, "")).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulosPorCategoria(nombreCategoria, 0, 3, "");
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulosPorCategoria(nombreCategoria, 0, 3, "");
+    }
+
+    @Test
+    void shouldReturnArticulosSuccessfullyByMarca() {
+        // Arrange
+        List<Articulo> articulos = Arrays.asList(articulo1, articulo2);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 2, 1, true);
+        String nombreMarca = "MarcaEjemplo";
+        when(articuloPersistencePort.listarArticulosPorMarca(nombreMarca, 0, 3, "")).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulosPorMarca(nombreMarca, 0, 3, "");
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulosPorMarca(nombreMarca, 0, 3, "");
+    }
+
+    @Test
     void shouldAddArticuloSuccessfully() {
 
         //Arrange
@@ -149,7 +162,7 @@ class ArticuloUseCaseTest {
         when(marcaPersistencePort.obtenerMarcaPorId(marcaId)).thenReturn(Optional.of(new Marca(marcaId, "MarcaEjemplo", "Descripción de Marca")));
 
         // Act
-        articuloUseCase.guardarArticulo(articulo1, marcaId, (List<Long>) categoriaIdsList);
+        articuloUseCase.guardarArticulo(articulo1, marcaId, categoriaIdsList);
 
         // Assert
         verify(articuloPersistencePort, times(1)).guardarArticulo(articulo1);
