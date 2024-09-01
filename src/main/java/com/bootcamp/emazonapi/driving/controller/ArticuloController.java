@@ -25,9 +25,6 @@ public class ArticuloController {
     private final IArticuloServicePort articuloServicePort;
     private final IArticuloRequestMapper articuloRequestMapper;
     private final IArticuloResponseMapper articuloResponseMapper;
-    private final IArticuloCategoriaResponseMapper articuloCategoriaResponseMapper;
-    private final IArticuloMarcaResponseMapper articuloMarcaResponseMapper;
-    private final IMarcaResponseMapper marcaResponseMapper;
 
     @Operation(summary = "Agregar un nuevo artículo", description = "Crea un nuevo artículo")
     @ApiResponses(value = {
@@ -79,35 +76,33 @@ public class ArticuloController {
 
         return ResponseEntity.ok(response);
 
-
-
-        /*// Llamar al use case para obtener los artículos
-        PagedResponse<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);
-
-
-        // Convertir a DTO excluyendo la descripción
-        List<ArticuloResponse> response = articulos.getContent().stream()
-                .map(articulo -> new ArticuloResponse(
-                        articulo.getId(),
-                        articulo.getNombre(),
-                        articulo.getDescripcion(),
-                        articulo.getCantidad(),
-                        articulo.getPrecio(),
-                        // Mapea MarcaResponse excluyendo la descripción
-                        new ArticuloMarcaResponse(articulo.getMarca().getId(), articulo.getMarca().getNombre()),
-                        // Mapea CategoriaResponse excluyendo la descripción
-                        articulo.getCategorias().stream()
-                                .map(categoria -> new ArticuloCategoriaResponse(categoria.getId(), categoria.getNombre()))
-                                .collect(Collectors.toSet())
-                ))
-                .collect(Collectors.toList());
-
-        //aqui hay que crear la respuesta paginada antes de retornar
-
-        return ResponseEntity.ok((PagedResponse<ArticuloResponse>) response);*/
-
-
         }
+
+    @Operation(summary = "Obtener artículos por nombre de categoría", description = "Devuelve una lista de artículos filtrados por nombre de categoría paginados")
+    @GetMapping("/categoria")
+    public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulosPorCategoria(
+            @RequestParam(value = "nombreCategoria") String nombreCategoria,
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "3") int size,
+            @RequestParam(value = "order", defaultValue = "") String order) {
+
+        PagedResponse<Articulo> articulos = articuloServicePort.listarArticulosPorCategoria(nombreCategoria, page, size, order);
+        PagedResponse<ArticuloResponse> response = articuloResponseMapper.articuloToResponseList(articulos);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(summary = "Obtener artículos por nombre de marca", description = "Devuelve una lista de artículos filtrados por nombre de marca paginados")
+    @GetMapping("/marca")
+    public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulosPorMarca(
+            @RequestParam(value = "nombreMarca") String nombreMarca,
+            @RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "3") int size,
+            @RequestParam(value = "order", defaultValue = "") String order) {
+
+        PagedResponse<Articulo> articulos = articuloServicePort.listarArticulosPorMarca(nombreMarca, page, size, order);
+        PagedResponse<ArticuloResponse> response = articuloResponseMapper.articuloToResponseList(articulos);
+        return ResponseEntity.ok(response);
+    }
 
 }
 

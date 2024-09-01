@@ -120,6 +120,8 @@ class ArticuloUseCaseTest {
         verify(articuloPersistencePort).listarArticulos(0, 3, "desc");
     }
 
+
+
     @Test
     void shouldReturnEmptyListWhenNoArticulosFound() {
         // Arrange

@@ -69,5 +69,15 @@ public class ArticuloUseCase implements IArticuloServicePort {
         return articuloPersistencePort.listarArticulos(page,size,order);
     }
 
+    @Override
+    public PagedResponse<Articulo> listarArticulosPorCategoria(String nombreCategoria, int page, int size, String order) {
+        return articuloPersistencePort.listarArticulosPorCategoria(nombreCategoria, page, size, order);
+    }
+
+    @Override
+    public PagedResponse<Articulo> listarArticulosPorMarca(String nombreMarca, int page, int size, String order) {
+        return articuloPersistencePort.listarArticulosPorMarca(nombreMarca, page, size, order);
+    }
+
 }
 

@@ -13,6 +13,7 @@ public interface IArticuloServicePort {
 
     PagedResponse<Articulo> listarArticulos(int page, int size, String order);
 
-
+    PagedResponse<Articulo> listarArticulosPorCategoria(String nombreCategoria, int page, int size, String order);
+    PagedResponse<Articulo> listarArticulosPorMarca(String nombreMarca, int page, int size, String order);
 }
 
