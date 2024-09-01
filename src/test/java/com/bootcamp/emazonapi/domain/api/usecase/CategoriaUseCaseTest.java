@@ -2,9 +2,10 @@ package com.bootcamp.emazonapi.domain.api.usecase;
 
 import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazonapi.domain.exception.CharacterLimitExceededException;
+import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
 
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +33,10 @@ class CategoriaUseCaseTest {
     private Categoria categoria2;
     private Categoria categoria3;
 
+    private void assertPagedResponseContentEquals(PagedResponse<Categoria> expected, PagedResponse<Categoria> actual) {
+        assertEquals(expected.getContent(), actual.getContent(), "Contenido no coincide");
+    }
+
     @BeforeEach
     void setUp() {
         categoria1 = new Categoria(1L, "Zapatos", "Descripción de Zapatos");
@@ -43,13 +48,14 @@ class CategoriaUseCaseTest {
     void shouldReturnCategoriasSuccessfullyById() {
         // Arrange
         List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
-        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(categorias);
+        PagedResponse<Categoria> pagedResponse = new PagedResponse<>(categorias, 0, 3, 3, 1, true);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(pagedResponse);
 
         // Act
-        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
+        PagedResponse<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
 
         // Assert
-        assertEquals(categorias, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(categoriaPersistencePort).listarCategorias(0, 3, "");
     }
 
@@ -57,13 +63,14 @@ class CategoriaUseCaseTest {
     void shouldReturnCategoriasSuccessfullyByNombreAsc() {
         // Arrange
         List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
-        when(categoriaPersistencePort.listarCategorias(0, 3, "asc")).thenReturn(categorias);
+        PagedResponse<Categoria> pagedResponse = new PagedResponse<>(categorias, 0, 3, 3, 1, true);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "asc")).thenReturn(pagedResponse);
 
         // Act
-        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "asc");
+        PagedResponse<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "asc");
 
         // Assert
-        assertEquals(categorias, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(categoriaPersistencePort).listarCategorias(0, 3, "asc");
     }
 
@@ -71,26 +78,28 @@ class CategoriaUseCaseTest {
     void shouldReturnCategoriasSuccessfullyByNombreDesc() {
         // Arrange
         List<Categoria> categorias = Arrays.asList(categoria1, categoria2, categoria3);
-        when(categoriaPersistencePort.listarCategorias(0, 3, "desc")).thenReturn(categorias);
+        PagedResponse<Categoria> pagedResponse = new PagedResponse<>(categorias, 0, 3, 3, 1, true);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "desc")).thenReturn(pagedResponse);
 
         // Act
-        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "desc");
+        PagedResponse<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "desc");
 
         // Assert
-        assertEquals(categorias, result);
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(categoriaPersistencePort).listarCategorias(0, 3, "desc");
     }
 
     @Test
     void shouldReturnEmptyListWhenNoCategoriasFound() {
         // Arrange
-        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(Arrays.asList());
+        PagedResponse<Categoria> pagedResponse = new PagedResponse<>(Arrays.asList(), 0, 3, 0, 0, true);
+        when(categoriaPersistencePort.listarCategorias(0, 3, "")).thenReturn(pagedResponse);
 
         // Act
-        List<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
+        PagedResponse<Categoria> result = categoriaUseCase.listarCategorias(0, 3, "");
 
         // Assert
-        assertEquals(0, result.size());
+        assertPagedResponseContentEquals(pagedResponse, result);
         verify(categoriaPersistencePort).listarCategorias(0, 3, "");
     }
 
@@ -124,14 +133,14 @@ class CategoriaUseCaseTest {
     @Test
     void shouldThrowCharacterLimitExceededExceptionWhenNombreExceedsLength() {
         // Arrange
-        assertThrows(CharacterLimitExceededException.class, () -> {
+        assertThrows(LimitExceededException.class, () -> {
             new Categoria(1L, "Nombre que excede los 50 caracteres permitidos por la validación", "Ejemplo de una descripcion válida");
         });
     }
     @Test
     void shouldThrowCharacterLimitExceededExceptionWhenDescripcionExceedsLength() {
         // Arrange
-        assertThrows(CharacterLimitExceededException.class, () -> {
+        assertThrows(LimitExceededException.class, () -> {
             new Categoria(1L, "EjemploCategoria", "Ejemplo de una descripcion Descripción que excede los 90 caracteres permitidos por la validación y debería devolver un error");
         });
     }

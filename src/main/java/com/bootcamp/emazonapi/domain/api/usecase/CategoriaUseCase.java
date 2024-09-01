@@ -5,6 +5,7 @@ import java.util.List;
 import com.bootcamp.emazonapi.domain.api.ICategoriaServicePort;
 import com.bootcamp.emazonapi.domain.service.Categoria;
 import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 
 public class CategoriaUseCase implements ICategoriaServicePort {
 
@@ -26,7 +27,7 @@ public class CategoriaUseCase implements ICategoriaServicePort {
     }
 
     @Override
-    public List<Categoria> listarCategorias(int page, int size, String order){
+    public PagedResponse<Categoria> listarCategorias(int page, int size, String order){
         return categoriaPersistencePort.listarCategorias(page,size,order);
     }
 

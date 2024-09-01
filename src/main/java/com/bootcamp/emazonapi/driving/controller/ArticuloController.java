@@ -3,9 +3,10 @@ package com.bootcamp.emazonapi.driving.controller;
 import com.bootcamp.emazonapi.domain.api.IArticuloServicePort;
 import com.bootcamp.emazonapi.domain.service.Articulo;
 import com.bootcamp.emazonapi.driving.dto.request.AddArticuloRequest;
-import com.bootcamp.emazonapi.driving.dto.response.ArticuloResponse;
+import com.bootcamp.emazonapi.driving.dto.response.*;
 import com.bootcamp.emazonapi.driving.mapper.IArticuloRequestMapper;
 import com.bootcamp.emazonapi.driving.mapper.IArticuloResponseMapper;
+import com.bootcamp.emazonapi.driving.mapper.IMarcaResponseMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -15,8 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/articulos")
@@ -26,6 +27,7 @@ public class ArticuloController {
     private final IArticuloServicePort articuloServicePort;
     private final IArticuloRequestMapper articuloRequestMapper;
     private final IArticuloResponseMapper articuloResponseMapper;
+    private final IMarcaResponseMapper marcaResponseMapper;
 
     @Operation(summary = "Agregar un nuevo artículo", description = "Crea un nuevo artículo")
     @ApiResponses(value = {
@@ -68,7 +70,30 @@ public class ArticuloController {
     public ResponseEntity<List<ArticuloResponse>> obtenerArticulos(@RequestParam(value = "page", defaultValue = "0") int page,
                                                                      @RequestParam(value = "size", defaultValue = "3") int size,
                                                                      @RequestParam(value = "order", defaultValue = "") String order) {
-        return ResponseEntity.ok(articuloResponseMapper.articuloToResponseList(articuloServicePort.listarArticulos(page, size, order)));
+
+        // Llamar al use case para obtener los artículos
+        List<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);
+
+        // Convertir a DTO excluyendo la descripción
+        List<ArticuloResponse> response = articulos.stream()
+                .map(articulo -> new ArticuloResponse(
+                        articulo.getId(),
+                        articulo.getNombre(),
+                        articulo.getDescripcion(),
+                        articulo.getCantidad(),
+                        articulo.getPrecio(),
+                        // Mapea MarcaResponse excluyendo la descripción
+                        new ArticuloMarcaResponse(articulo.getMarca().getId(), articulo.getMarca().getNombre()),
+                        // Mapea CategoriaResponse excluyendo la descripción
+                        articulo.getCategorias().stream()
+                                .map(categoria -> new ArticuloCategoriaResponse(categoria.getId(), categoria.getNombre()))
+                                .collect(Collectors.toSet())
+                ))
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(response);
+
+
         }
 
 }

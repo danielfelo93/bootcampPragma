@@ -1,8 +1,7 @@
 package com.bootcamp.emazonapi.domain.api;
 
-import java.util.List;
-
 import com.bootcamp.emazonapi.domain.service.Categoria;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 
 public interface ICategoriaServicePort {
 
@@ -10,7 +9,7 @@ public interface ICategoriaServicePort {
 
     Categoria obtenerCategoria(String nombre);
 
-    List<Categoria> listarCategorias(int page, int size, String order);
+    PagedResponse<Categoria> listarCategorias(int page, int size, String order);
 
 
 }

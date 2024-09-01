@@ -130,14 +130,15 @@ class ArticuloUseCaseTest {
 
         //Arrange
         Long marcaId = 1L;
-        Set<Long> categoriaIds = new HashSet<>(Arrays.asList(1L, 2L));
+        Set<Long> categoriaIdsSet = new HashSet<>(Arrays.asList(1L, 2L));
+        List<Long> categoriaIdsList = new ArrayList<>(categoriaIdsSet);
 
         when(categoriaPersistencePort.obtenerCategoriaPorId(1L)).thenReturn(Optional.of(new Categoria(1L, "Categoria1", "Descripción Categoria1")));
         when(categoriaPersistencePort.obtenerCategoriaPorId(2L)).thenReturn(Optional.of(new Categoria(2L, "Categoria2", "Descripción Categoria2")));
         when(marcaPersistencePort.obtenerMarcaPorId(marcaId)).thenReturn(Optional.of(new Marca(marcaId, "MarcaEjemplo", "Descripción de Marca")));
 
         // Act
-        articuloUseCase.guardarArticulo(articulo1, marcaId, (List<Long>) categoriaIds);
+        articuloUseCase.guardarArticulo(articulo1, marcaId, (List<Long>) categoriaIdsList);
 
         // Assert
         verify(articuloPersistencePort, times(1)).guardarArticulo(articulo1);

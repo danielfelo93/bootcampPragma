@@ -1,7 +1,6 @@
 package com.bootcamp.emazonapi.driving.controller;
 
-import java.util.List;
-
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,9 +49,9 @@ public class CategoriaController {
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
     })
     @GetMapping("/")
-    public ResponseEntity<List<CategoriaResponse>> obtenerCategorias(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                                     @RequestParam(value = "size", defaultValue = "3") int size,
-                                                                     @RequestParam(value = "order", defaultValue = "") String order) {
+    public ResponseEntity<PagedResponse<CategoriaResponse>> obtenerCategorias(@RequestParam(value = "page", defaultValue = "0") int page,
+                                                                              @RequestParam(value = "size", defaultValue = "3") int size,
+                                                                              @RequestParam(value = "order", defaultValue = "") String order) {
         return ResponseEntity.ok(categoriaResponseMapper.categoriaToResponseList(categoriaServicePort.listarCategorias(page, size, order)));
         }
 

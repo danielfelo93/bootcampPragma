@@ -7,13 +7,10 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class CategoriaResponse {
+public class ArticuloCategoriaResponse {
 
     private final long id;
 
     private final String nombre;
-
-    private final String descripcion;
-
 
 }

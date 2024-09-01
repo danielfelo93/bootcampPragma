@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.bootcamp.emazonapi.domain.service.Categoria;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 
 public interface ICategoriaPersistencePort {
 
@@ -13,7 +14,7 @@ public interface ICategoriaPersistencePort {
 
     Optional<Categoria> obtenerCategoriaPorId(Long id);
 
-    List<Categoria> listarCategorias(int page, int size, String order);
+    PagedResponse<Categoria> listarCategorias(int page, int size, String order);
 
 }
 

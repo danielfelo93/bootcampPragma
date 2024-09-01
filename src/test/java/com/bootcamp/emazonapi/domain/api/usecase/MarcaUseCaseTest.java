@@ -1,6 +1,6 @@
 package com.bootcamp.emazonapi.domain.api.usecase;
 
-import com.bootcamp.emazonapi.domain.exception.CharacterLimitExceededException;
+import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
 import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
@@ -123,14 +123,14 @@ class MarcaUseCaseTest {
     @Test
     void shouldThrowCharacterLimitExceededExceptionWhenNombreExceedsLength() {
         // GIVEN, WHEN & THEN
-        assertThrows(CharacterLimitExceededException.class, () -> {
+        assertThrows(LimitExceededException.class, () -> {
             new Marca(1L, "Nombre que excede los 50 caracteres permitidos por la validación", "Ejemplo de una descripcion válida");
         });
     }
     @Test
     void shouldThrowCharacterLimitExceededExceptionWhenDescripcionExceedsLength() {
         // GIVEN, WHEN & THEN
-        assertThrows(CharacterLimitExceededException.class, () -> {
+        assertThrows(LimitExceededException.class, () -> {
             new Marca(1L, "EjemploMarca", "Ejemplo de una descripcion Descripción que excede los 90 caracteres permitidos por la validación y debería devolver un error");
         });
     }

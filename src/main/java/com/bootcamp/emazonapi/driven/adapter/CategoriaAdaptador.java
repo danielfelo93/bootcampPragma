@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 import com.bootcamp.emazonapi.config.Constants;
+import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -52,7 +53,7 @@ public class CategoriaAdaptador implements ICategoriaPersistencePort {
     }
 
     @Override
-    public List<Categoria> listarCategorias(int page, int size, String order) {
+    public PagedResponse<Categoria> listarCategorias(int page, int size, String order) {
         Pageable pageable;
 
         // Configura el Pageable basado en el parámetro de orden
@@ -75,7 +76,20 @@ public class CategoriaAdaptador implements ICategoriaPersistencePort {
         }
 
         // Mapea las entidades a objetos de dominio Categoria
-        return categoriaEntityMapper.categoriaToCategoriaEntityList(categorias);
+        List<Categoria> categoriaList = categoriaEntityMapper.categoriaToCategoriaEntityList(categorias);
+
+        // Construye el objeto PagedResponse con los metadatos de paginación
+        return new PagedResponse<>(
+                categoriaList,
+                categoriaPage.getNumber(),
+                categoriaPage.getSize(),
+                categoriaPage.getTotalElements(),
+                categoriaPage.getTotalPages(),
+                categoriaPage.isLast()
+        );
+
+/*        // Mapea las entidades a objetos de dominio Categoria
+        return categoriaEntityMapper.categoriaToCategoriaEntityList(categorias);*/
     }
 
 }

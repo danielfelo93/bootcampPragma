@@ -7,6 +7,7 @@ import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @Getter
@@ -22,7 +23,7 @@ public class ArticuloResponse {
 
     private final BigDecimal precio;
 
-    //private Long marcaId; // no un long si no un objeto marca
+    private ArticuloMarcaResponse marca;
 
-    //private List<Long> categoriaIds; // no un long si no una lista de objetos categoria
+    private Set<ArticuloCategoriaResponse> categorias;
 }
