@@ -1,6 +1,9 @@
 package com.bootcamp.emazonapi.domain.service;
 import com.bootcamp.emazonapi.config.security.UserRole;
+import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
+
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 
 public class User {
 
@@ -21,6 +24,8 @@ public class User {
     public User(Long id, String nombre, String apellido, String documentoDeIdentidad,
                 String celular, LocalDate fechaNacimiento, String correo,
                 String contrasena, UserRole rol) {
+
+
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,9 +35,28 @@ public class User {
         this.correo = correo;
         this.contrasena = contrasena;
         this.rol = rol;
+
+        validate();
     }
 
-    // Getters and Setters
+    // Validaciones
+    public void validate() {
+        if (fechaNacimiento.isAfter(LocalDate.now().minusYears(18))) {
+            throw new InvalidDataException("El usuario debe ser mayor de edad");
+        }
+        // Validaciones de otros campos
+        if (!correo.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
+            throw new InvalidDataException("Correo inválido");
+        }
+        if (!celular.matches("\\+\\d{10,13}")) {
+            throw new InvalidDataException("Número de celular inválido");
+        }
+        if (!documentoDeIdentidad.matches("\\d{10}")) {
+            throw new InvalidDataException("Documento de identidad inválido");
+        }
+    }
+
+    /// Getters and Setters
     public Long getId() {
         return id;
     }
@@ -63,6 +87,7 @@ public class User {
 
     public void setDocumentoDeIdentidad(String documentoDeIdentidad) {
         this.documentoDeIdentidad = documentoDeIdentidad;
+        validate();
     }
 
     public String getCelular() {
@@ -71,6 +96,7 @@ public class User {
 
     public void setCelular(String celular) {
         this.celular = celular;
+        validate();
     }
 
     public LocalDate getFechaNacimiento() {
@@ -79,6 +105,7 @@ public class User {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+        validate();
     }
 
     public String getCorreo() {
@@ -87,14 +114,15 @@ public class User {
 
     public void setCorreo(String correo) {
         this.correo = correo;
+        validate();
     }
 
     public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(String clave) {
-        this.contrasena = clave;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public UserRole getRol() {

@@ -396,3 +396,86 @@ Action:
 
 Consider defining a bean of type 'java.lang.String' in your configuration.
 
+2024-09-06T12:54:14.732-05:00  INFO 13500 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 13500 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T12:54:14.734-05:00  INFO 13500 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T12:54:15.446-05:00  INFO 13500 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T12:54:15.508-05:00  INFO 13500 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 5 JPA repository interfaces.
+2024-09-06T12:54:16.008-05:00  INFO 13500 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T12:54:16.018-05:00  INFO 13500 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T12:54:16.019-05:00  INFO 13500 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T12:54:16.090-05:00  INFO 13500 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T12:54:16.091-05:00  INFO 13500 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1315 ms
+2024-09-06T12:54:16.346-05:00  INFO 13500 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T12:54:16.465-05:00  INFO 13500 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T12:54:16.515-05:00  INFO 13500 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T12:54:16.791-05:00  INFO 13500 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T12:54:16.811-05:00  INFO 13500 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T12:54:16.941-05:00  INFO 13500 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@344f9467
+2024-09-06T12:54:16.942-05:00  INFO 13500 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T12:54:16.972-05:00  WARN 13500 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T12:54:16.972-05:00  WARN 13500 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T12:54:17.713-05:00  INFO 13500 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T12:54:17.775-05:00  INFO 13500 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T12:54:18.262-05:00  WARN 13500 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T12:54:18.411-05:00  INFO 13500 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T12:54:18.556-05:00 DEBUG 13500 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T12:54:18.663-05:00 DEBUG 13500 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T12:54:18.890-05:00 DEBUG 13500 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T12:54:18.960-05:00 DEBUG 13500 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T12:54:19.178-05:00  INFO 13500 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T12:54:19.193-05:00  INFO 13500 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.829 seconds (process running for 5.136)
+2024-09-06T12:54:33.526-05:00  INFO 24668 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 24668 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T12:54:33.528-05:00  INFO 24668 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T12:54:34.297-05:00  INFO 24668 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T12:54:34.383-05:00  INFO 24668 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
+2024-09-06T12:54:34.979-05:00  INFO 24668 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T12:54:34.992-05:00  INFO 24668 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T12:54:34.993-05:00  INFO 24668 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T12:54:35.062-05:00  INFO 24668 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T12:54:35.062-05:00  INFO 24668 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1487 ms
+2024-09-06T12:54:35.276-05:00  INFO 24668 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T12:54:35.354-05:00  INFO 24668 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T12:54:35.390-05:00  INFO 24668 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T12:54:35.697-05:00  INFO 24668 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T12:54:35.718-05:00  INFO 24668 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T12:54:35.874-05:00  INFO 24668 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bf0f70a
+2024-09-06T12:54:35.877-05:00  INFO 24668 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T12:54:35.912-05:00  WARN 24668 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T12:54:35.913-05:00  WARN 24668 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T12:54:36.670-05:00  INFO 24668 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T12:54:36.728-05:00  INFO 24668 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T12:54:37.201-05:00  WARN 24668 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T12:54:37.359-05:00  INFO 24668 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T12:54:37.544-05:00 DEBUG 24668 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T12:54:37.645-05:00 DEBUG 24668 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T12:54:37.803-05:00 DEBUG 24668 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T12:54:37.836-05:00 DEBUG 24668 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T12:54:38.052-05:00  INFO 24668 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T12:54:38.060-05:00  INFO 24668 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.958 seconds (process running for 5.384)
+2024-09-06T14:51:34.803-05:00  INFO 8504 --- [emazonapi] [Test worker] c.b.emazonapi.EmazonApiApplicationTests  : Starting EmazonApiApplicationTests using Java 17.0.12 with PID 8504 (started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T14:51:34.805-05:00  INFO 8504 --- [emazonapi] [Test worker] c.b.emazonapi.EmazonApiApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T14:51:34.827-05:00 DEBUG 8504 --- [emazonapi] [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6d3c232f
+2024-09-06T14:51:35.471-05:00  INFO 8504 --- [emazonapi] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T14:51:35.541-05:00  INFO 8504 --- [emazonapi] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 5 JPA repository interfaces.
+2024-09-06T14:51:35.962-05:00  INFO 8504 --- [emazonapi] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T14:51:36.001-05:00  INFO 8504 --- [emazonapi] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T14:51:36.030-05:00  INFO 8504 --- [emazonapi] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T14:51:36.281-05:00  INFO 8504 --- [emazonapi] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T14:51:36.307-05:00  INFO 8504 --- [emazonapi] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T14:51:36.424-05:00  INFO 8504 --- [emazonapi] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c6fc3e7
+2024-09-06T14:51:36.426-05:00  INFO 8504 --- [emazonapi] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T14:51:36.454-05:00  WARN 8504 --- [emazonapi] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T14:51:36.455-05:00  WARN 8504 --- [emazonapi] [Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T14:51:37.216-05:00  INFO 8504 --- [emazonapi] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T14:51:37.269-05:00  INFO 8504 --- [emazonapi] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T14:51:37.875-05:00  WARN 8504 --- [emazonapi] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T14:51:38.058-05:00  INFO 8504 --- [emazonapi] [Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T14:51:38.190-05:00 DEBUG 8504 --- [emazonapi] [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T14:51:38.356-05:00 DEBUG 8504 --- [emazonapi] [Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T14:51:38.594-05:00 DEBUG 8504 --- [emazonapi] [Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T14:51:38.616-05:00 DEBUG 8504 --- [emazonapi] [Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T14:51:38.762-05:00  INFO 8504 --- [emazonapi] [Test worker] c.b.emazonapi.EmazonApiApplicationTests  : Started EmazonApiApplicationTests in 4.132 seconds (process running for 4.999)
+2024-09-06T14:51:39.163-05:00 DEBUG 8504 --- [emazonapi] [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6d3c232f, started on Fri Sep 06 14:51:34 COT 2024
+2024-09-06T14:51:39.169-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T14:51:39.173-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-09-06T14:51:39.189-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

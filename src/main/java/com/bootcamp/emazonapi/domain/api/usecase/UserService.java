@@ -2,7 +2,7 @@ package com.bootcamp.emazonapi.domain.api.usecase;
 
 //import com.bootcamp.emazonapi.config.security.JwtUtil;
 import com.bootcamp.emazonapi.domain.api.IUserServicePort;
-import com.bootcamp.emazonapi.domain.exception.InvalidAgeException;
+import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
 import com.bootcamp.emazonapi.domain.service.ConstantesDominio;
 import com.bootcamp.emazonapi.domain.service.User;
 import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
@@ -22,6 +22,7 @@ public class UserService implements IUserServicePort {
     private final PasswordEncoder passwordEncoder;
     //private final JwtUtil jwtUtil;
 
+
     public UserService(IUserPersistencePort userPersistencePort, PasswordEncoder passwordEncoder/*, JwtUtil jwtUtil*/) {
         this.userPersistencePort = userPersistencePort;
         this.passwordEncoder = passwordEncoder;
@@ -35,23 +36,12 @@ public class UserService implements IUserServicePort {
 
     @Override
     public User registrarUsuario(User user) {
-        // Validaciones adicionales si es necesario
-        if (user.getFechaNacimiento() == null) {
-                throw new InvalidAgeException(ConstantesDominio.FECHANACIMIENTO_EDAD_MENOR_MENSAJE);
-            }
-
-        int edad = Period.between(user.getFechaNacimiento(), LocalDate.now()).getYears();
+        /*if (passwordEncoder == null) {
+            throw new IllegalStateException("PasswordEncoder no está inicializado");
+        }*/
         user.setContrasena(passwordEncoder.encode(user.getContrasena()));
-
-        if (edad >= ConstantesDominio.MIN_EDAD) {
-            // Guardar el usuario en la base de datos
-            userPersistencePort.guardarUsuario(user);
-            return user;
-        } else {
-            throw new InvalidAgeException(ConstantesDominio.FECHANACIMIENTO_EDAD_MENOR_MENSAJE);
-        }
-
-
+        userPersistencePort.guardarUsuario(user);
+        return user;
     }
 
     @Override

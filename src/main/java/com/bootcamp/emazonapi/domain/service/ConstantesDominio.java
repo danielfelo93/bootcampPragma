@@ -13,6 +13,9 @@ public final class ConstantesDominio {
     public static final String CAMPO_CATEGORIA_TAMANO_EXCEDIDO_MENSAJE = "El artículo debe tener entre 1 y 3 categorías.";
     public static final String CAMPO_CATEGORIA_DUPLICADA_MENSAJE = "No se permiten categorías duplicadas.";
     public static final String FECHANACIMIENTO_EDAD_MENOR_MENSAJE = "El usuario debe ser mayor de edad.";
+    public static final String CORREO_INVALIDO_MENSAJE = "Correo inválido.";
+    public static final String CELULAR_INVALIDO_MENSAJE = "Número de celular inválido";
+    public static final String DOCUMENTO_INVALIDO_MENSAJE = "Documento de identidad inválido";
 
     public static final int MAX_NOMBRE_TAMANO = 50;
     public static final int MAX_DESCRIPCION_TAMANO = 90;
