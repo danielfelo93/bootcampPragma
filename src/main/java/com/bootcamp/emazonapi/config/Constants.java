@@ -18,8 +18,6 @@ public class Constants {
 
     public static final String DESCRIPCION_VACIA_EXCEPCION_MENSAJE = "El campo descripcion no puede estar vacío";
 
-    public static final String CAMPO_CATEGORIA_TAMANO_EXCEDIDO_MENSAJE = "El artículo debe tener entre 1 y 3 categorías.";
-
 
 
 }

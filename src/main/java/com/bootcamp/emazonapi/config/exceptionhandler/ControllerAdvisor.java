@@ -2,8 +2,10 @@ package com.bootcamp.emazonapi.config.exceptionhandler;
 
 import java.time.LocalDateTime;
 
+import com.bootcamp.emazonapi.domain.exception.InvalidAgeException;
 import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
 import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
+import com.bootcamp.emazonapi.domain.service.ConstantesDominio;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -52,6 +54,12 @@ public class ControllerAdvisor {
     public ResponseEntity<ExceptionResponse> handleIllegalArgumentException(IllegalArgumentException exception) {
         return ResponseEntity.badRequest().body(new ExceptionResponse(
                 exception.getMessage(), HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(InvalidAgeException.class)
+    public ResponseEntity<ExceptionResponse> handleInvalidAgeException(InvalidAgeException exception) {
+        return ResponseEntity.badRequest().body(new ExceptionResponse(
+                ConstantesDominio.FECHANACIMIENTO_EDAD_MENOR_MENSAJE, HttpStatus.CONFLICT.toString(), LocalDateTime.now()));
     }
 
 }
