@@ -479,3 +479,992 @@ Consider defining a bean of type 'java.lang.String' in your configuration.
 2024-09-06T14:51:39.169-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-09-06T14:51:39.173-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-09-06T14:51:39.189-05:00  INFO 8504 --- [emazonapi] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-09-06T22:34:10.114-05:00  INFO 4224 --- [emazonapi] [Test worker] c.b.emazonapi.EmazonApiApplicationTests  : Starting EmazonApiApplicationTests using Java 17.0.12 with PID 4224 (started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:34:10.116-05:00  INFO 4224 --- [emazonapi] [Test worker] c.b.emazonapi.EmazonApiApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:34:10.147-05:00 DEBUG 4224 --- [emazonapi] [Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6d3c232f
+2024-09-06T22:34:10.812-05:00  INFO 4224 --- [emazonapi] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:34:10.888-05:00  INFO 4224 --- [emazonapi] [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:34:11.295-05:00  INFO 4224 --- [emazonapi] [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:34:11.345-05:00  INFO 4224 --- [emazonapi] [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:34:11.371-05:00  INFO 4224 --- [emazonapi] [Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:34:11.601-05:00  INFO 4224 --- [emazonapi] [Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:34:11.623-05:00  INFO 4224 --- [emazonapi] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:34:11.733-05:00  INFO 4224 --- [emazonapi] [Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d68954d
+2024-09-06T22:34:11.734-05:00  INFO 4224 --- [emazonapi] [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:34:11.764-05:00  WARN 4224 --- [emazonapi] [Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:34:11.765-05:00  WARN 4224 --- [emazonapi] [Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:34:12.446-05:00  INFO 4224 --- [emazonapi] [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:34:12.500-05:00  INFO 4224 --- [emazonapi] [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:34:13.155-05:00  WARN 4224 --- [emazonapi] [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:34:13.341-05:00  INFO 4224 --- [emazonapi] [Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:34:13.488-05:00 DEBUG 4224 --- [emazonapi] [Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:34:25.012-05:00  INFO 24672 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 24672 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:34:25.014-05:00  INFO 24672 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:34:25.651-05:00  INFO 24672 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:34:25.716-05:00  INFO 24672 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:34:26.184-05:00  INFO 24672 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:34:26.193-05:00  INFO 24672 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:34:26.193-05:00  INFO 24672 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:34:26.248-05:00  INFO 24672 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:34:26.249-05:00  INFO 24672 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1196 ms
+2024-09-06T22:34:26.526-05:00  INFO 24672 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:34:26.685-05:00  INFO 24672 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:34:26.730-05:00  INFO 24672 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:34:26.985-05:00  INFO 24672 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:34:27.007-05:00  INFO 24672 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:34:27.139-05:00  INFO 24672 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6f6cac
+2024-09-06T22:34:27.141-05:00  INFO 24672 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:34:27.171-05:00  WARN 24672 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:34:27.172-05:00  WARN 24672 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:34:27.823-05:00  INFO 24672 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:34:27.881-05:00  INFO 24672 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:34:28.322-05:00  WARN 24672 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:34:28.477-05:00  INFO 24672 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:34:28.611-05:00 DEBUG 24672 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:34:28.720-05:00 DEBUG 24672 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:34:28.940-05:00 DEBUG 24672 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:34:29.012-05:00 DEBUG 24672 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:34:29.233-05:00  INFO 24672 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:34:29.239-05:00  INFO 24672 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.612 seconds (process running for 4.879)
+2024-09-06T22:34:40.153-05:00  INFO 24672 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:34:40.153-05:00  INFO 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:34:40.153-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:34:40.153-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:34:40.153-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:34:40.154-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2b9a7211
+2024-09-06T22:34:40.155-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@19ce597a
+2024-09-06T22:34:40.155-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:34:40.155-05:00  INFO 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-06T22:34:49.130-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html?continue", parameters={masked}
+2024-09-06T22:34:49.131-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.146-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.156-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-06T22:34:49.156-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-06T22:34:49.157-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.157-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.158-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-06T22:34:49.159-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-06T22:34:49.159-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-06T22:34:49.159-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.159-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.159-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.160-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.163-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.168-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.179-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.187-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.286-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-06T22:34:49.286-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:34:49.288-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-06T22:34:49.288-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:34:49.294-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.309-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-06T22:34:49.310-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8090/swagger-ui/oauth2-re (truncated)...]
+2024-09-06T22:34:49.315-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:34:49.323-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-06T22:34:49.323-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-06T22:34:49.594-05:00  INFO 24672 --- [emazonapi] [http-nio-8090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 261 ms
+2024-09-06T22:34:49.616-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-06T22:34:49.618-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-06T22:34:49.619-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:35:31.966-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:35:31.966-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:35:31.980-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Daniel, apellido=elbodego, documentoDeIdentidad=9170507074107, celular=+34517 (truncated)...]
+2024-09-06T22:35:31.984-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null
+2024-09-06T22:35:31.985-05:00 ERROR 24672 --- [emazonapi] [http-nio-8090-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null
+	at com.bootcamp.emazonapi.domain.service.User.validate(User.java:44) ~[main/:na]
+	at com.bootcamp.emazonapi.domain.service.User.setDocumentoDeIdentidad(User.java:90) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.mapper.IUserRequestMapperImpl.registroRequestToUser(IUserRequestMapperImpl.java:27) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.controller.UserController.registrarUsuario(UserController.java:36) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:189) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:175) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-09-06T22:35:31.992-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-09-06T22:35:31.993-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-09-06T22:35:31.995-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:35:31.996-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Sep 06 22:35:31 COT 2024, status=500, error=Internal Server Error, path=/users/regist (truncated)...]
+2024-09-06T22:35:31.999-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-09-06T22:36:12.229-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:36:12.230-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:36:12.231-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Daniel, apellido=elbodego, documentoDeIdentidad=9170507074107, celular=+34517 (truncated)...]
+2024-09-06T22:36:12.232-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null
+2024-09-06T22:36:12.232-05:00 ERROR 24672 --- [emazonapi] [http-nio-8090-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.time.LocalDate.isAfter(java.time.chrono.ChronoLocalDate)" because "this.fechaNacimiento" is null
+	at com.bootcamp.emazonapi.domain.service.User.validate(User.java:44) ~[main/:na]
+	at com.bootcamp.emazonapi.domain.service.User.setDocumentoDeIdentidad(User.java:90) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.mapper.IUserRequestMapperImpl.registroRequestToUser(IUserRequestMapperImpl.java:27) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.controller.UserController.registrarUsuario(UserController.java:36) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:189) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:175) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-09-06T22:36:12.235-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-09-06T22:36:12.236-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-09-06T22:36:12.236-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:36:12.236-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Sep 06 22:36:12 COT 2024, status=500, error=Internal Server Error, path=/users/regist (truncated)...]
+2024-09-06T22:36:12.237-05:00 DEBUG 24672 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-09-06T22:39:17.460-05:00  INFO 32080 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 32080 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:39:17.462-05:00  INFO 32080 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:39:18.096-05:00  INFO 32080 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:39:18.168-05:00  INFO 32080 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:39:18.655-05:00  INFO 32080 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:39:18.666-05:00  INFO 32080 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:39:18.666-05:00  INFO 32080 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:39:18.727-05:00  INFO 32080 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:39:18.728-05:00  INFO 32080 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1230 ms
+2024-09-06T22:39:18.980-05:00  INFO 32080 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:39:19.117-05:00  INFO 32080 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:39:19.147-05:00  INFO 32080 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:39:19.393-05:00  INFO 32080 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:39:19.410-05:00  INFO 32080 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:39:19.535-05:00  INFO 32080 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6f6cac
+2024-09-06T22:39:19.536-05:00  INFO 32080 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:39:19.565-05:00  WARN 32080 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:39:19.566-05:00  WARN 32080 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:39:20.251-05:00  INFO 32080 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:39:20.309-05:00  INFO 32080 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:39:20.856-05:00  WARN 32080 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:39:21.006-05:00  INFO 32080 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:39:21.144-05:00 DEBUG 32080 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:39:21.226-05:00 DEBUG 32080 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:39:21.330-05:00 DEBUG 32080 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:39:21.355-05:00 DEBUG 32080 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:39:21.520-05:00  INFO 32080 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:39:21.527-05:00  INFO 32080 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.401 seconds (process running for 4.663)
+2024-09-06T22:39:25.654-05:00  INFO 32080 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:39:25.654-05:00  INFO 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:39:25.655-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:39:25.655-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:39:25.655-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:39:25.655-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2b9a7211
+2024-09-06T22:39:25.656-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@19ce597a
+2024-09-06T22:39:25.656-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:39:25.656-05:00  INFO 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-06T22:39:33.045-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html?continue", parameters={masked}
+2024-09-06T22:39:33.048-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.075-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.087-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-06T22:39:33.088-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-06T22:39:33.089-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-06T22:39:33.089-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.090-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-06T22:39:33.091-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.091-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.090-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-06T22:39:33.093-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.093-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.095-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.098-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.106-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.121-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.132-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.206-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-06T22:39:33.207-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:39:33.210-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-06T22:39:33.214-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:39:33.220-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.246-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-06T22:39:33.250-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8090/swagger-ui/oauth2-re (truncated)...]
+2024-09-06T22:39:33.260-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:39:33.293-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-06T22:39:33.298-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-06T22:39:34.166-05:00  INFO 32080 --- [emazonapi] [http-nio-8090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 829 ms
+2024-09-06T22:39:34.212-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-06T22:39:34.217-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-06T22:39:34.222-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:40:19.432-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:40:19.433-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:40:19.489-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=2153040649746, celular=+50097 (truncated)...]
+2024-09-06T22:40:19.493-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bootcamp.emazonapi.config.exceptionhandler.ControllerAdvisor#handleIllegalArgumentException(IllegalArgumentException)
+2024-09-06T22:40:19.503-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:40:19.504-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bootcamp.emazonapi.config.exceptionhandler.ExceptionResponse@45332fb4]
+2024-09-06T22:40:19.506-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: La fecha de nacimiento no puede ser nula.]
+2024-09-06T22:40:19.507-05:00 DEBUG 32080 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-09-06T22:45:47.439-05:00  INFO 29372 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 29372 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:45:47.441-05:00  INFO 29372 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:45:48.109-05:00  INFO 29372 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:45:48.182-05:00  INFO 29372 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:45:48.696-05:00  INFO 29372 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:45:48.707-05:00  INFO 29372 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:45:48.707-05:00  INFO 29372 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:45:48.768-05:00  INFO 29372 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:45:48.769-05:00  INFO 29372 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1285 ms
+2024-09-06T22:45:48.973-05:00  INFO 29372 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:45:49.044-05:00  INFO 29372 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:45:49.067-05:00  INFO 29372 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:45:49.306-05:00  INFO 29372 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:45:49.328-05:00  INFO 29372 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:45:49.444-05:00  INFO 29372 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59127611
+2024-09-06T22:45:49.446-05:00  INFO 29372 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:45:49.473-05:00  WARN 29372 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:45:49.473-05:00  WARN 29372 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:45:50.183-05:00  INFO 29372 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:45:50.281-05:00  INFO 29372 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:45:50.708-05:00  WARN 29372 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:45:50.856-05:00  INFO 29372 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:45:50.959-05:00 DEBUG 29372 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:45:51.057-05:00 DEBUG 29372 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:45:51.218-05:00 DEBUG 29372 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:45:51.259-05:00 DEBUG 29372 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:45:51.430-05:00  INFO 29372 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:45:51.440-05:00  INFO 29372 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.354 seconds (process running for 4.682)
+2024-09-06T22:45:54.043-05:00  INFO 29372 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:45:54.044-05:00  INFO 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:45:54.044-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:45:54.044-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:45:54.044-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:45:54.045-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@615bd28b
+2024-09-06T22:45:54.046-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a9fd482
+2024-09-06T22:45:54.046-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:45:54.046-05:00  INFO 29372 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-06T22:46:00.493-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html?continue", parameters={masked}
+2024-09-06T22:46:00.496-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.530-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.544-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-06T22:46:00.545-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.548-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-06T22:46:00.549-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.552-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.555-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-06T22:46:00.556-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.558-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.552-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-06T22:46:00.560-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.563-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-06T22:46:00.564-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.566-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.580-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.595-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.674-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-06T22:46:00.676-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:46:00.677-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-06T22:46:00.678-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:46:00.687-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.726-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-06T22:46:00.729-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8090/swagger-ui/oauth2-re (truncated)...]
+2024-09-06T22:46:00.740-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:00.770-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-06T22:46:00.772-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-06T22:46:01.459-05:00  INFO 29372 --- [emazonapi] [http-nio-8090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 657 ms
+2024-09-06T22:46:01.548-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-06T22:46:01.552-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-06T22:46:01.553-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:46:15.937-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:46:15.937-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:46:15.960-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=2153040649746, celular=+50097 (truncated)...]
+2024-09-06T22:46:15.964-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null
+2024-09-06T22:46:15.965-05:00 ERROR 29372 --- [emazonapi] [http-nio-8090-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null
+	at com.bootcamp.emazonapi.domain.service.User.validate(User.java:52) ~[main/:na]
+	at com.bootcamp.emazonapi.domain.service.User.setDocumentoDeIdentidad(User.java:94) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.mapper.IUserRequestMapperImpl.registroRequestToUser(IUserRequestMapperImpl.java:27) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.controller.UserController.registrarUsuario(UserController.java:36) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:189) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:175) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-09-06T22:46:15.980-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-09-06T22:46:15.981-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-09-06T22:46:15.986-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:46:15.986-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Sep 06 22:46:15 COT 2024, status=500, error=Internal Server Error, path=/users/regist (truncated)...]
+2024-09-06T22:46:15.993-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-09-06T22:46:19.686-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:46:19.687-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:46:19.689-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=2153040649746, celular=+50097 (truncated)...]
+2024-09-06T22:46:19.690-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null
+2024-09-06T22:46:19.691-05:00 ERROR 29372 --- [emazonapi] [http-nio-8090-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "String.matches(String)" because "this.correo" is null
+	at com.bootcamp.emazonapi.domain.service.User.validate(User.java:52) ~[main/:na]
+	at com.bootcamp.emazonapi.domain.service.User.setDocumentoDeIdentidad(User.java:94) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.mapper.IUserRequestMapperImpl.registroRequestToUser(IUserRequestMapperImpl.java:27) ~[main/:na]
+	at com.bootcamp.emazonapi.driving.controller.UserController.registrarUsuario(UserController.java:36) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:189) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:175) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2024-09-06T22:46:19.696-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2024-09-06T22:46:19.696-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-09-06T22:46:19.698-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:46:19.698-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Sep 06 22:46:19 COT 2024, status=500, error=Internal Server Error, path=/users/regist (truncated)...]
+2024-09-06T22:46:19.699-05:00 DEBUG 29372 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-09-06T22:48:39.595-05:00  INFO 20452 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 20452 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:48:39.597-05:00  INFO 20452 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:48:40.213-05:00  INFO 20452 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:48:40.280-05:00  INFO 20452 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:48:40.775-05:00  INFO 20452 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:48:40.785-05:00  INFO 20452 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:48:40.785-05:00  INFO 20452 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:48:40.841-05:00  INFO 20452 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:48:40.842-05:00  INFO 20452 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2024-09-06T22:48:41.087-05:00  INFO 20452 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:48:41.192-05:00  INFO 20452 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:48:41.235-05:00  INFO 20452 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:48:41.480-05:00  INFO 20452 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:48:41.498-05:00  INFO 20452 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:48:41.631-05:00  INFO 20452 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@222d9d4f
+2024-09-06T22:48:41.632-05:00  INFO 20452 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:48:41.659-05:00  WARN 20452 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:48:41.660-05:00  WARN 20452 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:48:42.319-05:00  INFO 20452 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:48:42.389-05:00  INFO 20452 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:48:42.814-05:00  WARN 20452 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:48:42.955-05:00  INFO 20452 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:48:43.077-05:00 DEBUG 20452 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:48:43.138-05:00 DEBUG 20452 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:48:43.237-05:00 DEBUG 20452 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:48:43.259-05:00 DEBUG 20452 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:48:43.399-05:00  INFO 20452 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:48:43.405-05:00  INFO 20452 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.123 seconds (process running for 4.405)
+2024-09-06T22:48:48.924-05:00  INFO 20452 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:48:48.924-05:00  INFO 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:48:48.924-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:48:48.924-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:48:48.924-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:48:48.925-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@37aec9b
+2024-09-06T22:48:48.925-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@27d4513e
+2024-09-06T22:48:48.926-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:48:48.926-05:00  INFO 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-09-06T22:48:57.310-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html?continue", parameters={masked}
+2024-09-06T22:48:57.312-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.341-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.359-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-06T22:48:57.361-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.367-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-06T22:48:57.370-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.369-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-06T22:48:57.372-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.389-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.399-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.388-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-06T22:48:57.403-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.405-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-06T22:48:57.406-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.411-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.440-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.455-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.491-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:48:57.491-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-06T22:48:57.492-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-06T22:48:57.492-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:48:57.498-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.519-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-06T22:48:57.521-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8090/swagger-ui/oauth2-re (truncated)...]
+2024-09-06T22:48:57.528-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:48:57.536-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-06T22:48:57.537-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-06T22:48:58.260-05:00  INFO 20452 --- [emazonapi] [http-nio-8090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 700 ms
+2024-09-06T22:48:58.302-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-06T22:48:58.307-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-06T22:48:58.310-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:49:05.097-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:49:05.097-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:49:05.185-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=2153040649746, celular=+50097 (truncated)...]
+2024-09-06T22:49:05.191-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bootcamp.emazonapi.config.exceptionhandler.ControllerAdvisor#handleInvalidAgeException(InvalidDataException)
+2024-09-06T22:49:05.200-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:49:05.200-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bootcamp.emazonapi.config.exceptionhandler.ExceptionResponse@6cd0ed36]
+2024-09-06T22:49:05.203-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bootcamp.emazonapi.domain.exception.InvalidDataException: Número de celular inválido]
+2024-09-06T22:49:05.205-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-09-06T22:50:34.599-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:50:34.600-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:50:34.602-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=2153040649746, celular=+50097 (truncated)...]
+2024-09-06T22:50:34.603-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.bootcamp.emazonapi.config.exceptionhandler.ControllerAdvisor#handleInvalidAgeException(InvalidDataException)
+2024-09-06T22:50:34.604-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:50:34.605-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.bootcamp.emazonapi.config.exceptionhandler.ExceptionResponse@3cec51f6]
+2024-09-06T22:50:34.606-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.bootcamp.emazonapi.domain.exception.InvalidDataException: Documento de identidad inválido]
+2024-09-06T22:50:34.607-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2024-09-06T22:51:02.140-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:51:02.141-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:51:02.143-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=7215304064, celular=+50097700 (truncated)...]
+2024-09-06T22:51:02.720-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:51:02.722-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegistroResponse(id=null, nombre=Bodego, apellido=Bodeguin, documentoDeIdentidad=7215304064, celular (truncated)...]
+2024-09-06T22:51:02.723-05:00 DEBUG 20452 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:51:29.706-05:00  INFO 4996 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 4996 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:51:29.708-05:00  INFO 4996 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:51:30.355-05:00  INFO 4996 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:51:30.427-05:00  INFO 4996 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:51:30.910-05:00  INFO 4996 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:51:30.919-05:00  INFO 4996 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:51:30.920-05:00  INFO 4996 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:51:30.972-05:00  INFO 4996 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:51:30.972-05:00  INFO 4996 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1222 ms
+2024-09-06T22:51:31.273-05:00  INFO 4996 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:51:31.392-05:00  INFO 4996 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:51:31.433-05:00  INFO 4996 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:51:31.710-05:00  INFO 4996 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:51:31.729-05:00  INFO 4996 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:51:31.861-05:00  INFO 4996 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@222d9d4f
+2024-09-06T22:51:31.863-05:00  INFO 4996 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:51:31.895-05:00  WARN 4996 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:51:31.896-05:00  WARN 4996 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:51:32.542-05:00  INFO 4996 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:51:32.596-05:00  INFO 4996 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:51:33.043-05:00  WARN 4996 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:51:33.204-05:00  INFO 4996 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:51:33.370-05:00 DEBUG 4996 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:51:33.498-05:00 DEBUG 4996 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:51:33.745-05:00 DEBUG 4996 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:51:33.808-05:00 DEBUG 4996 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:51:34.036-05:00  INFO 4996 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:51:34.044-05:00  INFO 4996 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.706 seconds (process running for 5.012)
+2024-09-06T22:51:40.141-05:00  INFO 4996 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:51:40.141-05:00  INFO 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:51:40.142-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:51:40.142-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:51:40.143-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:51:40.144-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@64864875
+2024-09-06T22:51:40.145-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6137dc84
+2024-09-06T22:51:40.145-05:00 DEBUG 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:51:40.146-05:00  INFO 4996 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2024-09-06T22:54:43.687-05:00  INFO 1936 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 1936 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:54:43.690-05:00  INFO 1936 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:54:44.338-05:00  INFO 1936 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:54:44.410-05:00  INFO 1936 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:54:44.954-05:00  INFO 1936 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:54:44.963-05:00  INFO 1936 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:54:44.963-05:00  INFO 1936 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:54:45.015-05:00  INFO 1936 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:54:45.016-05:00  INFO 1936 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1286 ms
+2024-09-06T22:54:45.321-05:00  INFO 1936 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:54:45.457-05:00  INFO 1936 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:54:45.484-05:00  INFO 1936 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:54:45.736-05:00  INFO 1936 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:54:45.755-05:00  INFO 1936 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:54:45.887-05:00  INFO 1936 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@65db548
+2024-09-06T22:54:45.889-05:00  INFO 1936 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:54:45.919-05:00  WARN 1936 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:54:45.920-05:00  WARN 1936 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:54:46.612-05:00  INFO 1936 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:54:46.678-05:00  INFO 1936 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:54:47.209-05:00  WARN 1936 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:54:47.378-05:00  INFO 1936 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:54:47.556-05:00 DEBUG 1936 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:54:47.669-05:00 DEBUG 1936 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:54:47.914-05:00 DEBUG 1936 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:54:47.973-05:00 DEBUG 1936 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:54:48.163-05:00  INFO 1936 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:54:48.172-05:00  INFO 1936 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.799 seconds (process running for 5.112)
+2024-09-06T22:54:54.568-05:00  INFO 1936 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:54:54.568-05:00  INFO 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:54:54.568-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:54:54.568-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:54:54.569-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:54:54.570-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@76379796
+2024-09-06T22:54:54.570-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5ff12345
+2024-09-06T22:54:54.571-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:54:54.571-05:00  INFO 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-09-06T22:54:55.019-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2024-09-06T22:54:55.021-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-09-06T22:54:55.031-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-09-06T22:54:55.036-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .]
+2024-09-06T22:54:55.037-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-09-06T22:54:55.046-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-09-06T22:54:55.047-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-09-06T22:54:55.075-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-09-06T22:54:55.086-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-09-06T22:54:55.109-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2024-09-06T22:54:55.113-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-09-06T22:54:55.118-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-09-06T22:54:55.118-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+2024-09-06T22:54:55.119-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-09-06T22:54:55.121-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-09-06T22:54:55.122-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-09-06T22:54:55.157-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json]
+2024-09-06T22:54:55.162-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Sep 06 22:54:55 COT 2024, status=404, error=Not Found, path=/favicon.ico}]
+2024-09-06T22:54:55.229-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-09-06T22:55:14.176-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2024-09-06T22:55:14.176-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2024-09-06T22:55:14.177-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2024-09-06T22:55:14.177-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .]
+2024-09-06T22:55:14.177-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 404 NOT_FOUND
+2024-09-06T22:55:14.178-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error", parameters={}
+2024-09-06T22:55:14.179-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#errorHtml(HttpServletRequest, HttpServletResponse)
+2024-09-06T22:55:14.180-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, text/html;q=0.8]
+2024-09-06T22:55:14.181-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 404
+2024-09-06T22:55:17.297-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2024-09-06T22:55:17.301-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-6] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.331-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.370-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2024-09-06T22:55:17.370-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2024-09-06T22:55:17.370-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2024-09-06T22:55:17.371-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.371-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-7] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.371-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.374-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.375-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.382-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.387-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2024-09-06T22:55:17.388-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-10] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.392-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2024-09-06T22:55:17.392-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.393-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.400-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.773-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2024-09-06T22:55:17.774-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2024-09-06T22:55:17.776-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2024-09-06T22:55:17.777-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8090/swagger-ui/oauth2-re (truncated)...]
+2024-09-06T22:55:17.778-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.780-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:55:17.781-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.783-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:17.795-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2024-09-06T22:55:17.796-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2024-09-06T22:55:17.796-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/favicon-32x32.png", parameters={}
+2024-09-06T22:55:17.797-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2024-09-06T22:55:17.799-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:55:18.135-05:00  INFO 1936 --- [emazonapi] [http-nio-8090-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 327 ms
+2024-09-06T22:55:18.186-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2024-09-06T22:55:18.189-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
+2024-09-06T22:55:18.191-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:56:21.259-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/users/register", parameters={}
+2024-09-06T22:56:21.260-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.bootcamp.emazonapi.driving.controller.UserController#registrarUsuario(RegistroRequest)
+2024-09-06T22:56:21.286-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegistroRequest(nombre=bodego, apellido=bodeguin2, documentoDeIdentidad=7755391424, celular=+7900000 (truncated)...]
+2024-09-06T22:56:21.443-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-09-06T22:56:21.449-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [RegistroResponse(id=null, nombre=bodego, apellido=bodeguin2, documentoDeIdentidad=7755391424, celula (truncated)...]
+2024-09-06T22:56:21.451-05:00 DEBUG 1936 --- [emazonapi] [http-nio-8090-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-09-06T22:57:03.384-05:00  INFO 3980 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Starting EmazonApiApplication using Java 21.0.2 with PID 3980 (C:\Universidad\bootcamp Pragma\emazonAPI\build\classes\java\main started by eldan in C:\Universidad\bootcamp Pragma\emazonAPI)
+2024-09-06T22:57:03.386-05:00  INFO 3980 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-09-06T22:57:03.999-05:00  INFO 3980 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-06T22:57:04.063-05:00  INFO 3980 --- [emazonapi] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 5 JPA repository interfaces.
+2024-09-06T22:57:04.560-05:00  INFO 3980 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8090 (http)
+2024-09-06T22:57:04.570-05:00  INFO 3980 --- [emazonapi] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-06T22:57:04.570-05:00  INFO 3980 --- [emazonapi] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-09-06T22:57:04.627-05:00  INFO 3980 --- [emazonapi] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-06T22:57:04.627-05:00  INFO 3980 --- [emazonapi] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1205 ms
+2024-09-06T22:57:04.902-05:00  INFO 3980 --- [emazonapi] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-06T22:57:05.020-05:00  INFO 3980 --- [emazonapi] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-06T22:57:05.055-05:00  INFO 3980 --- [emazonapi] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-06T22:57:05.361-05:00  INFO 3980 --- [emazonapi] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-06T22:57:05.381-05:00  INFO 3980 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-06T22:57:05.519-05:00  INFO 3980 --- [emazonapi] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18d610e1
+2024-09-06T22:57:05.520-05:00  INFO 3980 --- [emazonapi] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-06T22:57:05.547-05:00  WARN 3980 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-06T22:57:05.548-05:00  WARN 3980 --- [emazonapi] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-09-06T22:57:06.283-05:00  INFO 3980 --- [emazonapi] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-06T22:57:06.347-05:00  INFO 3980 --- [emazonapi] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-06T22:57:06.791-05:00  WARN 3980 --- [emazonapi] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-06T22:57:06.932-05:00  INFO 3980 --- [emazonapi] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-09-06T22:57:07.064-05:00 DEBUG 3980 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 17 mappings in 'requestMappingHandlerMapping'
+2024-09-06T22:57:07.149-05:00 DEBUG 3980 --- [emazonapi] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-09-06T22:57:07.262-05:00 DEBUG 3980 --- [emazonapi] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-09-06T22:57:07.285-05:00 DEBUG 3980 --- [emazonapi] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-09-06T22:57:07.412-05:00  INFO 3980 --- [emazonapi] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8090 (http) with context path '/'
+2024-09-06T22:57:07.419-05:00  INFO 3980 --- [emazonapi] [main] c.b.emazonapi.EmazonApiApplication       : Started EmazonApiApplication in 4.368 seconds (process running for 4.669)
+2024-09-06T22:57:12.206-05:00  INFO 3980 --- [emazonapi] [http-nio-8090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-06T22:57:12.206-05:00  INFO 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-06T22:57:12.207-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-09-06T22:57:12.207-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-09-06T22:57:12.207-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-09-06T22:57:12.207-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@12ae75f1
+2024-09-06T22:57:12.207-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@22f1a340
+2024-09-06T22:57:12.208-05:00 DEBUG 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-09-06T22:57:12.208-05:00  INFO 3980 --- [emazonapi] [http-nio-8090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms

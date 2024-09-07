@@ -3,7 +3,6 @@ import com.bootcamp.emazonapi.config.security.UserRole;
 import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
 
 import java.time.LocalDate;
-import java.util.regex.Pattern;
 
 public class User {
 
@@ -15,10 +14,10 @@ public class User {
     private LocalDate fechaNacimiento;
     private String correo;
     private String contrasena;  // Clave encriptada con bcrypt
-    private UserRole rol = UserRole.AUX_BODEGA;
+    private UserRole rol;
 
-    public User() {
-    }
+    /*public User() {
+    }*/
 
     // Constructor
     public User(Long id, String nombre, String apellido, String documentoDeIdentidad,
@@ -31,16 +30,20 @@ public class User {
         this.apellido = apellido;
         this.documentoDeIdentidad = documentoDeIdentidad;
         this.celular = celular;
+        System.out.println("Fecha de Nacimiento antes de asignar: " + fechaNacimiento);
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.contrasena = contrasena;
-        this.rol = rol;
+        this.rol = UserRole.AUX_BODEGA;
 
         validate();
     }
 
     // Validaciones
     public void validate() {
+        if (fechaNacimiento == null) {
+            throw new IllegalArgumentException("La fecha de nacimiento no puede ser nula.");
+        }
         if (fechaNacimiento.isAfter(LocalDate.now().minusYears(18))) {
             throw new InvalidDataException("El usuario debe ser mayor de edad");
         }
