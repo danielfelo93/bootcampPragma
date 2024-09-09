@@ -7,8 +7,6 @@ public interface ICategoriaServicePort {
 
     void guardarCategoria(Categoria categoria);
 
-    Categoria obtenerCategoria(String nombre);
-
     PagedResponse<Categoria> listarCategorias(int page, int size, String order);
 
 

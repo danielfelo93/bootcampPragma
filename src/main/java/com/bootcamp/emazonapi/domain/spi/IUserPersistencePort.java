@@ -9,10 +9,8 @@ public interface IUserPersistencePort {
 
     User guardarUsuario(User user);
 
-    //Optional<User> encontrarPorId(Long id);
-
     Optional<User> encontrarPorCorreo(String correo);
-
+    boolean existsByCorreo(String correo);
     PagedResponse<User> listarUsuarios(int page, int size, String order);
 
 

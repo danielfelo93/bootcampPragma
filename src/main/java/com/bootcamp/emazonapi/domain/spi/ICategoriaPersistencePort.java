@@ -10,8 +10,6 @@ public interface ICategoriaPersistencePort {
 
     void guardarCategoria(Categoria categoria);
 
-    Categoria obtenerCategoria(String nombre);
-
     Optional<Categoria> obtenerCategoriaPorId(Long id);
 
     PagedResponse<Categoria> listarCategorias(int page, int size, String order);

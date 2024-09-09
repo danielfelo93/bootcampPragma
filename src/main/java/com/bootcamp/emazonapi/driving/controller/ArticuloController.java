@@ -31,6 +31,7 @@ public class ArticuloController {
             @ApiResponse(responseCode = "201", description = "Artículo creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
+
     @PostMapping("/admin/")
     public ResponseEntity<Void> crearArticulo(@RequestBody AddArticuloRequest request) {
 

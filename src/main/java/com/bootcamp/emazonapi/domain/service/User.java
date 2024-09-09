@@ -1,6 +1,7 @@
 package com.bootcamp.emazonapi.domain.service;
 import com.bootcamp.emazonapi.config.security.UserRole;
 import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
 
@@ -15,9 +16,6 @@ public class User {
     private String correo;
     private String contrasena;  // Clave encriptada con bcrypt
     private UserRole rol;
-
-    /*public User() {
-    }*/
 
     // Constructor
     public User(Long id, String nombre, String apellido, String documentoDeIdentidad,

@@ -37,6 +37,7 @@ public class CategoriaController {
             @ApiResponse(responseCode = "201", description = "Categoría creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
+
     @PostMapping("/admin/")
     public ResponseEntity<Void> crearCategoria(@RequestBody AddCategoriaRequest request) {
         categoriaServicePort.guardarCategoria(categoriaRequestMapper.addRequestToCategoria(request));

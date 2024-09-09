@@ -1,17 +1,16 @@
 package com.bootcamp.emazonapi.domain.api.usecase;
 
-//import com.bootcamp.emazonapi.config.security.JwtUtil;
+import com.bootcamp.emazonapi.config.security.JwtService;
 import com.bootcamp.emazonapi.domain.api.IUserServicePort;
-import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
-import com.bootcamp.emazonapi.domain.service.ConstantesDominio;
+import com.bootcamp.emazonapi.domain.exception.UserAlreadyExistsException;
 import com.bootcamp.emazonapi.domain.service.User;
 import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
 import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
 import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
-//import io.jsonwebtoken.Jwts;
-import java.time.Period;
-import java.time.LocalDate;
-//import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
@@ -20,13 +19,15 @@ public class UserService implements IUserServicePort {
 
     private final IUserPersistencePort userPersistencePort;
     private final PasswordEncoder passwordEncoder;
-    //private final JwtUtil jwtUtil;
+    private final JwtService jwtService;
+    private final AuthenticationManager authenticationManager;
 
 
-    public UserService(IUserPersistencePort userPersistencePort, PasswordEncoder passwordEncoder/*, JwtUtil jwtUtil*/) {
+    public UserService(IUserPersistencePort userPersistencePort, PasswordEncoder passwordEncoder, JwtService jwtService, AuthenticationManager authenticationManager) {
         this.userPersistencePort = userPersistencePort;
         this.passwordEncoder = passwordEncoder;
-        //this.jwtUtil = jwtUtil;
+        this.jwtService = jwtService;
+        this.authenticationManager = authenticationManager;
     }
 
     @Override
@@ -35,33 +36,39 @@ public class UserService implements IUserServicePort {
     }
 
     @Override
-    public User registrarUsuario(User user) {
-        /*if (passwordEncoder == null) {
-            throw new IllegalStateException("PasswordEncoder no está inicializado");
-        }*/
+    public String registrarUsuario(User user) {
+        if (userPersistencePort.existsByCorreo(user.getCorreo())) {
+            throw new UserAlreadyExistsException("El correo electrónico ya está registrado.");
+        }
         user.setContrasena(passwordEncoder.encode(user.getContrasena()));
         userPersistencePort.guardarUsuario(user);
-        return user;
+
+        return jwtService.getToken(user.getCorreo());
     }
 
     @Override
     public Optional<String> autenticarUsuario(AutenticacionRequest autenticacionRequest) {
-        return Optional.empty();
-    }
 
-    /*@Override
-    public Optional<String> autenticarUsuario(AutenticacionRequest autenticacionRequest) {
-        // Obtener el usuario por correo
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+                autenticacionRequest.getCorreo(),
+                autenticacionRequest.getContrasena()));
+                User user = userPersistencePort.encontrarPorCorreo(autenticacionRequest.getCorreo())
+                        .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        String token = jwtService.getToken(user.getCorreo());
+        return Optional.of(token);
+
+        /*// Obtener el usuario por correo
         User user = userPersistencePort.encontrarPorCorreo(autenticacionRequest.getCorreo())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
         // Verificar la contraseña
         if (passwordEncoder.matches(autenticacionRequest.getContrasena(), user.getContrasena())) {
-            String token = jwtUtil.generateToken(user.getCorreo());
+
+            String token = jwtService.getToken(user.getCorreo());
 
             return Optional.of(token);
         } else {
             throw new RuntimeException("Credenciales inválidas");
-        }
-    }*/
+        }*/
+    }
 }

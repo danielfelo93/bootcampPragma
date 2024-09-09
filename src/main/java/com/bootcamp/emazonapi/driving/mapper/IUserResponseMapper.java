@@ -1,7 +1,6 @@
 package com.bootcamp.emazonapi.driving.mapper;
 
 import com.bootcamp.emazonapi.config.security.UserRole;
-import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.service.User;
 import com.bootcamp.emazonapi.driving.dto.response.*;
 import org.mapstruct.Mapper;

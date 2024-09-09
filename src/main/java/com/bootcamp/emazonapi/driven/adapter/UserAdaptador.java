@@ -1,10 +1,7 @@
 package com.bootcamp.emazonapi.driven.adapter;
 
-
-import com.bootcamp.emazonapi.domain.service.Marca;
 import com.bootcamp.emazonapi.domain.service.User;
 import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
-import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
 import com.bootcamp.emazonapi.driven.entity.UserEntity;
 import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
 import com.bootcamp.emazonapi.driven.mapper.UserEntityMapper;
@@ -16,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -39,32 +37,31 @@ public class UserAdaptador implements IUserPersistencePort {
     }
 
     @Override
+    public boolean existsByCorreo(String correo) {
+        return userRepository.existsByCorreo(correo);
+    }
+
+    @Override
     public PagedResponse<User> listarUsuarios(int page, int size, String order) {
         Pageable pageable;
 
-        // Configura el Pageable basado en el parámetro de orden
         if ("desc".equalsIgnoreCase(order)) {
             pageable = PageRequest.of(page, size, Sort.by("nombre").descending());
         } else if ("asc".equalsIgnoreCase(order)) {
             pageable = PageRequest.of(page, size, Sort.by("nombre").ascending());
         } else {
-            // Ordena por ID si el parámetro de orden está vacío o no es reconocido
             pageable = PageRequest.of(page, size, Sort.by("id"));
         }
 
-        // Obtén las categorías usando el Pageable configurado
         Page<UserEntity> userPage = userRepository.findAll(pageable);
         List<UserEntity> users = userPage.getContent();
 
-        // Lanza excepción si no hay datos
         if (users.isEmpty()) {
             throw new NoDataFoundException();
         }
 
-        // Mapea las entidades a objetos de dominio Marca
         List<User> userList = userEntityMapper.userToUserEntityList(users);
 
-        // Construye el objeto PagedResponse con los metadatos de paginación
         return new PagedResponse<>(
                 userList,
                 userPage.getNumber(),

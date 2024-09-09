@@ -16,5 +16,6 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         response.setStatus(HttpServletResponse.SC_FORBIDDEN); // Set the 403 status
         response.setContentType("application/json");
         response.getWriter().write("{\"message\": \"Acceso denegado - No tienes los permisos necesarios.\", \"status\": 403}");
+        response.sendRedirect("users/login");
     }
 }

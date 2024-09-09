@@ -1,6 +1,5 @@
 package com.bootcamp.emazonapi.driving.dto.response;
 
-import com.bootcamp.emazonapi.config.security.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -16,6 +16,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,20 +32,20 @@ public class UserController {
     private final IUserResponseMapper userResponseMapper;
 
 
-    @PostMapping("/register")
-    public ResponseEntity<RegistroResponse> registrarUsuario(@RequestBody RegistroRequest registroRequest) {
+    @PostMapping("admin/register")
+    public ResponseEntity<AutenticacionResponse> registrarUsuario(@RequestBody RegistroRequest registroRequest) {
         User user = userRequestMapper.registroRequestToUser(registroRequest);
-        User savedUser = userService.registrarUsuario(user);
-        RegistroResponse response = userResponseMapper.userToRegistroResponse(savedUser);
-        return ResponseEntity.ok(response);
+        String token = userService.registrarUsuario(user);
+
+        AutenticacionResponse autenticacionResponse = userResponseMapper.userToAutenticacionResponse(token);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(autenticacionResponse);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AutenticacionResponse> authenticateUser(@RequestBody AutenticacionRequest autenticacionRequest) {
-        // Autenticar al usuario usando el servicio
+    public ResponseEntity<AutenticacionResponse> autenticarUsuario(@RequestBody AutenticacionRequest autenticacionRequest) {
         Optional<String> token = userService.autenticarUsuario(autenticacionRequest);
 
-        // Si el token es presente, construir la respuesta
         if (token.isPresent()) {
             AutenticacionResponse response = userResponseMapper.userToAutenticacionResponse(token.get());
             return ResponseEntity.ok(response);
