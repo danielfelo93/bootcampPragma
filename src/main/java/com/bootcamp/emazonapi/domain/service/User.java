@@ -1,7 +1,6 @@
 package com.bootcamp.emazonapi.domain.service;
 import com.bootcamp.emazonapi.config.security.UserRole;
 import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
 

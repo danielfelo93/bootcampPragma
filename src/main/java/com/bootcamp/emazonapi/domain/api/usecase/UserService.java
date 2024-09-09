@@ -9,8 +9,6 @@ import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
 import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
@@ -56,19 +54,5 @@ public class UserService implements IUserServicePort {
                         .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
         String token = jwtService.getToken(user.getCorreo());
         return Optional.of(token);
-
-        /*// Obtener el usuario por correo
-        User user = userPersistencePort.encontrarPorCorreo(autenticacionRequest.getCorreo())
-                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-
-        // Verificar la contraseña
-        if (passwordEncoder.matches(autenticacionRequest.getContrasena(), user.getContrasena())) {
-
-            String token = jwtService.getToken(user.getCorreo());
-
-            return Optional.of(token);
-        } else {
-            throw new RuntimeException("Credenciales inválidas");
-        }*/
     }
 }
