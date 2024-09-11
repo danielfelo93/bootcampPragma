@@ -35,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-# Archivos de compilación
-target/
-
-# Archivos específicos de OS
-.DS_Store
