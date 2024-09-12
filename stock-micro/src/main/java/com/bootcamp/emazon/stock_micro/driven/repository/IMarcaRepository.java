@@ -5,10 +5,11 @@ import com.bootcamp.emazon.stock_micro.driven.entity.MarcaEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-
+@Repository
 public interface IMarcaRepository extends JpaRepository<MarcaEntity, Long> {
 
     Optional<MarcaEntity> findByNombreContaining(String nombre);
