@@ -1,12 +1,11 @@
-package com.bootcamp.emazonapi.driven.mapper;
+package com.bootcamp.emazon.stock_micro.driven.mapper;
 
 import java.util.List;
 
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.driven.entity.CategoriaEntity;
 import org.mapstruct.Mapper;
 
-
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.driven.entity.CategoriaEntity;
 
 @Mapper(componentModel = "spring")
 public interface ICategoriaEntityMapper {

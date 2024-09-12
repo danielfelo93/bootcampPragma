@@ -1,4 +1,5 @@
-package com.bootcamp.emazonapi.config.security;
+/*
+package com.bootcamp.emazon.stock_micro.config.security;
 
 public enum UserRole {
     ADMIN("ROLE_ADMIN"),
@@ -15,4 +16,4 @@ public enum UserRole {
     public String getRol() {
         return rol;
     }
-}
+}*/

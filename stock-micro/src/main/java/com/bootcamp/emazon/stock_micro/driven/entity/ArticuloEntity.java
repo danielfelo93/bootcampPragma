@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.driven.entity;
+package com.bootcamp.emazon.stock_micro.driven.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

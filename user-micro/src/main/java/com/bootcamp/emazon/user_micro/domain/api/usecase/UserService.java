@@ -1,12 +1,12 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.user_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.config.security.JwtService;
-import com.bootcamp.emazonapi.domain.api.IUserServicePort;
-import com.bootcamp.emazonapi.domain.exception.UserAlreadyExistsException;
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
-import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
+import com.bootcamp.emazon.user_micro.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.user_micro.config.security.JwtService;
+import com.bootcamp.emazon.user_micro.domain.api.IUserServicePort;
+import com.bootcamp.emazon.user_micro.domain.exception.UserAlreadyExistsException;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;

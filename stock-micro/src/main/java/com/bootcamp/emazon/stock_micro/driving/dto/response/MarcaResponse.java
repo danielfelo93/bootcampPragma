@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.driving.dto.response;
+package com.bootcamp.emazon.stock_micro.driving.dto.response;
 
 
 

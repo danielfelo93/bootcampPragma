@@ -1,17 +1,26 @@
-package com.bootcamp.emazonapi.config;
+package com.bootcamp.emazon.stock_micro.config;
 
-import com.bootcamp.emazonapi.domain.api.*;
-import com.bootcamp.emazonapi.domain.api.usecase.*;
-import com.bootcamp.emazonapi.domain.spi.*;
-import com.bootcamp.emazonapi.driven.adapter.*;
-import com.bootcamp.emazonapi.driven.mapper.*;
-import com.bootcamp.emazonapi.driven.repository.*;
-import com.bootcamp.emazonapi.config.security.JwtService;
+import com.bootcamp.emazon.stock_micro.domain.api.IArticuloServicePort;
+import com.bootcamp.emazon.stock_micro.domain.api.IMarcaServicePort;
+import com.bootcamp.emazon.stock_micro.domain.api.ICategoriaServicePort;
+import com.bootcamp.emazon.stock_micro.domain.api.usecase.ArticuloUseCase;
+import com.bootcamp.emazon.stock_micro.domain.api.usecase.MarcaUseCase;
+import com.bootcamp.emazon.stock_micro.domain.api.usecase.CategoriaUseCase;
+import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driven.adapter.ArticuloAdaptador;
+import com.bootcamp.emazon.stock_micro.driven.adapter.MarcaAdaptador;
+import com.bootcamp.emazon.stock_micro.driven.adapter.CategoriaAdaptador;
+import com.bootcamp.emazon.stock_micro.driven.mapper.IArticuloEntityMapper;
+import com.bootcamp.emazon.stock_micro.driven.mapper.ICategoriaEntityMapper;
+import com.bootcamp.emazon.stock_micro.driven.mapper.IMarcaEntityMapper;
+import com.bootcamp.emazon.stock_micro.driven.repository.IArticuloRepository;
+import com.bootcamp.emazon.stock_micro.driven.repository.ICategoriaRepository;
+import com.bootcamp.emazon.stock_micro.driven.repository.IMarcaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @RequiredArgsConstructor
@@ -23,15 +32,6 @@ public class ConfiguracionBeans {
     private final IMarcaRepository marcaRepository;
     private final IArticuloEntityMapper articuloEntityMapper;
     private final IArticuloRepository articuloRepository;
-    /*private final JwtService jwtService;
-    private final IUserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;  // Inyectar el PasswordEncoder
-    private final AuthenticationManager authenticationManager;*/
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
 
     @Bean
     public ICategoriaPersistencePort categoriaPersistencePort() {

@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config.exceptionhandler;
+package com.bootcamp.emazon.user_micro.config.exceptionhandler;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

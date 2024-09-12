@@ -1,8 +1,10 @@
-package com.bootcamp.emazonapi.driving.mapper;
+package com.bootcamp.emazon.user_micro.driving.mapper;
 
-import com.bootcamp.emazonapi.config.security.UserRole;
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.driving.dto.response.*;
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driving.dto.response.AutenticacionResponse;
+import com.bootcamp.emazon.user_micro.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.user_micro.driving.dto.response.RegistroResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

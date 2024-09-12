@@ -1,10 +1,9 @@
-package com.bootcamp.emazonapi.domain.spi;
+package com.bootcamp.emazon.stock_micro.domain.spi;
 
-import java.util.List;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
+
 import java.util.Optional;
-
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
 
 public interface ICategoriaPersistencePort {
 

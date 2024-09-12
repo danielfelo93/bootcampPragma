@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config.security;
+package com.bootcamp.emazon.user_micro.config.security;
 
 import java.security.Key;
 

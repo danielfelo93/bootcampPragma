@@ -1,9 +1,10 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.stock_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.domain.api.ICategoriaServicePort;
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+
+import com.bootcamp.emazon.stock_micro.domain.api.ICategoriaServicePort;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 
 public class CategoriaUseCase implements ICategoriaServicePort {
 
@@ -14,7 +15,7 @@ public class CategoriaUseCase implements ICategoriaServicePort {
     }
 
     @Override
-    public void guardarCategoria(Categoria categoria) {  
+    public void guardarCategoria(Categoria categoria) {
         categoriaPersistencePort.guardarCategoria(categoria);
      }
 

@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config;
+package com.bootcamp.emazon.user_micro.config;
 
 public class Constants {
 

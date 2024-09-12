@@ -1,6 +1,8 @@
-package com.bootcamp.emazonapi.domain.service;
-import com.bootcamp.emazonapi.config.security.UserRole;
-import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
+package com.bootcamp.emazon.user_micro.domain.service;
+
+
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
+import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
 
 import java.time.LocalDate;
 

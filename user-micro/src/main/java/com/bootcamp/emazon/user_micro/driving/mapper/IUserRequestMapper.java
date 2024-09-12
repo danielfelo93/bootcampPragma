@@ -1,8 +1,8 @@
-package com.bootcamp.emazonapi.driving.mapper;
+package com.bootcamp.emazon.user_micro.driving.mapper;
 
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
-import com.bootcamp.emazonapi.driving.dto.request.RegistroRequest;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
+import com.bootcamp.emazon.user_micro.driving.dto.request.RegistroRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

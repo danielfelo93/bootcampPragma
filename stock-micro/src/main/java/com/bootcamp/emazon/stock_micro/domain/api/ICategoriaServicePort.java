@@ -1,7 +1,8 @@
-package com.bootcamp.emazonapi.domain.api;
+package com.bootcamp.emazon.stock_micro.domain.api;
 
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 
 public interface ICategoriaServicePort {
 

@@ -1,13 +1,12 @@
-package com.bootcamp.emazonapi.driven.adapter;
+package com.bootcamp.emazon.user_micro.driven.adapter;
 
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
-import com.bootcamp.emazonapi.driven.entity.UserEntity;
-import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
-import com.bootcamp.emazonapi.driven.mapper.UserEntityMapper;
-import com.bootcamp.emazonapi.driven.repository.IUserRepository;
-
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
+import com.bootcamp.emazon.user_micro.driven.entity.UserEntity;
+import com.bootcamp.emazon.user_micro.driven.exceptions.NoDataFoundException;
+import com.bootcamp.emazon.user_micro.driven.mapper.UserEntityMapper;
+import com.bootcamp.emazon.user_micro.driven.repository.IUserRepository;
+import com.bootcamp.emazon.user_micro.driving.dto.response.PagedResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

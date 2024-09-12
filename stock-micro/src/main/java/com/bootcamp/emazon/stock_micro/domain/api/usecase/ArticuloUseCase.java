@@ -1,17 +1,16 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.stock_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.domain.api.IArticuloServicePort;
-import com.bootcamp.emazonapi.domain.exception.DuplicatedFieldException;
-import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.domain.service.ConstantesDominio;
-import com.bootcamp.emazonapi.domain.service.Marca;
-import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
-import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
-import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.domain.api.IArticuloServicePort;
+import com.bootcamp.emazon.stock_micro.domain.exception.DuplicatedFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.LimitExceededException;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.domain.service.ConstantesDominio;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashSet;
@@ -25,7 +24,6 @@ public class ArticuloUseCase implements IArticuloServicePort {
     private final IArticuloPersistencePort articuloPersistencePort;
     private final ICategoriaPersistencePort categoriaPersistencePort;
     private final IMarcaPersistencePort marcaPersistencePort;
-    private final RestTemplate restTemplate;
 
     public ArticuloUseCase(IArticuloPersistencePort articuloPersistencePort,
                            ICategoriaPersistencePort categoriaPersistencePort,

@@ -1,22 +1,22 @@
-package com.bootcamp.emazonapi.driven.adapter;
+package com.bootcamp.emazon.stock_micro.driven.adapter;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
-import com.bootcamp.emazonapi.config.Constants;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.config.Constants;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driven.entity.CategoriaEntity;
+import com.bootcamp.emazon.stock_micro.driven.exceptions.NoDataFoundException;
+import com.bootcamp.emazon.stock_micro.driven.exceptions.ProductAlreadyExistsException;
+import com.bootcamp.emazon.stock_micro.driven.mapper.ICategoriaEntityMapper;
+import com.bootcamp.emazon.stock_micro.driven.repository.ICategoriaRepository;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazonapi.driven.entity.CategoriaEntity;
-import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
-import com.bootcamp.emazonapi.driven.exceptions.ProductAlreadyExistsException;
-import com.bootcamp.emazonapi.driven.mapper.ICategoriaEntityMapper;
-import com.bootcamp.emazonapi.driven.repository.ICategoriaRepository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Sort;

@@ -1,11 +1,11 @@
-package com.bootcamp.emazonapi.driving.controller;
+package com.bootcamp.emazon.stock_micro.driving.controller;
 
-import com.bootcamp.emazonapi.domain.api.IMarcaServicePort;
-import com.bootcamp.emazonapi.driving.dto.request.AddMarcaRequest;
-import com.bootcamp.emazonapi.driving.dto.response.MarcaResponse;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
-import com.bootcamp.emazonapi.driving.mapper.IMarcaRequestMapper;
-import com.bootcamp.emazonapi.driving.mapper.IMarcaResponseMapper;
+import com.bootcamp.emazon.stock_micro.domain.api.IMarcaServicePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.request.AddMarcaRequest;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.MarcaResponse;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.driving.mapper.IMarcaRequestMapper;
+import com.bootcamp.emazon.stock_micro.driving.mapper.IMarcaResponseMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

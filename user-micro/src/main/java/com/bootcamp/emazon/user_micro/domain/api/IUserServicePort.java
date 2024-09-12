@@ -1,8 +1,9 @@
-package com.bootcamp.emazonapi.domain.api;
+package com.bootcamp.emazon.user_micro.domain.api;
 
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
+import com.bootcamp.emazon.user_micro.driving.dto.response.PagedResponse;
 
 import java.util.Optional;
 

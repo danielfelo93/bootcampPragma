@@ -1,6 +1,7 @@
-package com.bootcamp.emazonapi.config.security;
+package com.bootcamp.emazon.user_micro.config.security;
 
-import com.bootcamp.emazonapi.config.exceptionhandler.CustomAccessDeniedHandler;
+import com.bootcamp.emazon.user_micro.config.exceptionhandler.CustomAccessDeniedHandler;
+import com.bootcamp.emazon.user_micro.driven.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +17,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.bootcamp.emazonapi.driven.repository.IUserRepository;
 
 @Configuration
 @RequiredArgsConstructor
@@ -26,16 +26,15 @@ public class ConfiguracionSeguridad {
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
     private final IUserRepository userRepository;
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     @Bean
     public UserDetailsService userDetailsService() {
         return username -> userRepository.findByCorreo(username)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
-    }
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
     }
 
     @Bean

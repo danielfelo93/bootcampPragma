@@ -1,7 +1,9 @@
-package com.bootcamp.emazonapi.config.security;
+/*
+package com.bootcamp.emazon.stock_micro.config.security;
 
-import com.bootcamp.emazonapi.config.exceptionhandler.CustomAccessDeniedHandler;
+import com.bootcamp.emazon.stock_micro.config.exceptionhandler.CustomAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,37 +13,33 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import com.bootcamp.emazonapi.driven.repository.IUserRepository;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @RequiredArgsConstructor
 public class ConfiguracionSeguridad {
 
+    @Value("${user.service.url}")
+    private String userServiceUrl;
+
     private final JwtService jwtService;
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
-    private final IUserRepository userRepository;
-
-
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return username -> userRepository.findByCorreo(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
-    }
+    private final UserDetailsService userDetailsService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 
     @Bean
-    public AuthenticationProvider authenticationProvider() {
+    public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService) {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
-        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setUserDetailsService(userDetailsService);
         authenticationProvider.setPasswordEncoder(passwordEncoder());
         return authenticationProvider;
     }
@@ -52,27 +50,31 @@ public class ConfiguracionSeguridad {
     }
 
     @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter(JwtService jwtService, UserDetailsService userDetailsService) {
-        return new JwtAuthenticationFilter(jwtService, userDetailsService);
+    public JwtAuthenticationFilter jwtAuthenticationFilter(RestTemplate restTemplate) {
+        return new JwtAuthenticationFilter(jwtService, restTemplate, userServiceUrl);
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity, RestTemplate restTemplate) throws Exception {
         httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("*/admin/**").hasRole("ADMIN");
-                    auth.requestMatchers("*/bodega/**").hasAnyRole("AUX_BODEGA", "ADMIN");
+                    auth.requestMatchers("/admin/**").hasRole("ADMIN");
+                    auth.requestMatchers("/bodega/**").hasAnyRole("AUX_BODEGA", "ADMIN");
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(sessionManager ->
                         sessionManager
                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authenticationProvider(authenticationProvider())
-                .addFilterBefore(jwtAuthenticationFilter(jwtService, userDetailsService()), UsernamePasswordAuthenticationFilter.class)
+                .authenticationProvider(authenticationProvider(userDetailsService))
+                .addFilterBefore(jwtAuthenticationFilter(restTemplate), UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling()
                 .accessDeniedHandler(customAccessDeniedHandler);
 
         return httpSecurity.build();
     }
+
+
 }
+
+*/

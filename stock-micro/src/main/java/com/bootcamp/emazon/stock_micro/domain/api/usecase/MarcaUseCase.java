@@ -1,9 +1,11 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.stock_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.domain.api.IMarcaServicePort;
-import com.bootcamp.emazonapi.domain.service.Marca;
-import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+
+
+import com.bootcamp.emazon.stock_micro.domain.api.IMarcaServicePort;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 
 import java.util.List;
 

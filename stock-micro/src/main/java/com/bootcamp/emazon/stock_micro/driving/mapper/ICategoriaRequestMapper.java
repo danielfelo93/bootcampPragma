@@ -1,10 +1,10 @@
-package com.bootcamp.emazonapi.driving.mapper;
+package com.bootcamp.emazon.stock_micro.driving.mapper;
 
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.driving.dto.request.AddCategoriaRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.driving.dto.request.AddCategoriaRequest;
 
 @Mapper(componentModel = "spring")
 public interface ICategoriaRequestMapper {

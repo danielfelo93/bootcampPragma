@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.driving.dto.response;
+package com.bootcamp.emazon.user_micro.driving.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

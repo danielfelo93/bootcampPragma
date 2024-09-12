@@ -1,7 +1,7 @@
-package com.bootcamp.emazonapi.driven.mapper;
+package com.bootcamp.emazon.stock_micro.driven.mapper;
 
-import com.bootcamp.emazonapi.domain.service.Marca;
-import com.bootcamp.emazonapi.driven.entity.MarcaEntity;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.driven.entity.MarcaEntity;
 import org.mapstruct.Mapper;
 
 import java.util.List;

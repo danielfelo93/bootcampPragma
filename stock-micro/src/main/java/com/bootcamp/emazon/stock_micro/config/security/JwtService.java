@@ -1,4 +1,5 @@
-package com.bootcamp.emazonapi.config.security;
+/*
+package com.bootcamp.emazon.stock_micro.config.security;
 
 import java.security.Key;
 
@@ -8,7 +9,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -32,7 +32,7 @@ public class JwtService {
         return getClaim(token, Claims::getSubject);
     }
 
-    public boolean isTokenValid(String token, UserDetails userDetails) {
+    public boolean isTokenValid(String token, UserDetailsResponse userDetails) {
         final String username = getUsernameFromToken(token);
         return (username.equals(userDetails.getUsername())&& !isTokenExpired(token));
     }
@@ -77,3 +77,4 @@ public class JwtService {
 
 
 }
+*/

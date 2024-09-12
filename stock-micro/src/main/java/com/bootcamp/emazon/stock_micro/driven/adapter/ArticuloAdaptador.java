@@ -1,16 +1,15 @@
-package com.bootcamp.emazonapi.driven.adapter;
+package com.bootcamp.emazon.stock_micro.driven.adapter;
 
-import com.bootcamp.emazonapi.config.Constants;
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
-import com.bootcamp.emazonapi.driven.entity.ArticuloEntity;
-import com.bootcamp.emazonapi.driven.exceptions.ElementNotFoundException;
-import com.bootcamp.emazonapi.driven.exceptions.NoDataFoundException;
-import com.bootcamp.emazonapi.driven.exceptions.ProductAlreadyExistsException;
-import com.bootcamp.emazonapi.driven.mapper.IArticuloEntityMapper;
-import com.bootcamp.emazonapi.driven.repository.IArticuloRepository;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.config.Constants;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
+import com.bootcamp.emazon.stock_micro.driven.entity.ArticuloEntity;
+import com.bootcamp.emazon.stock_micro.driven.exceptions.NoDataFoundException;
+import com.bootcamp.emazon.stock_micro.driven.exceptions.ProductAlreadyExistsException;
+import com.bootcamp.emazon.stock_micro.driven.exceptions.ElementNotFoundException;
+import com.bootcamp.emazon.stock_micro.driven.mapper.IArticuloEntityMapper;
+import com.bootcamp.emazon.stock_micro.driven.repository.IArticuloRepository;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

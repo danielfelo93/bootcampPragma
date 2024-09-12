@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.driving.dto.request;
+package com.bootcamp.emazon.user_micro.driving.dto.request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

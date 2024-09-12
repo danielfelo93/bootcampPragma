@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config.security;
+package com.bootcamp.emazon.user_micro.config.security;
 
 public enum UserRole {
     ADMIN("ROLE_ADMIN"),

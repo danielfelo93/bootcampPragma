@@ -1,9 +1,9 @@
-package com.bootcamp.emazonapi.driven.mapper;
+package com.bootcamp.emazon.user_micro.driven.mapper;
 
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.driven.entity.UserEntity;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driven.entity.UserEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
 
 import java.util.List;
 

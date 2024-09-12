@@ -1,11 +1,11 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.user_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.config.security.JwtService;
-import com.bootcamp.emazonapi.config.security.UserRole;
-import com.bootcamp.emazonapi.domain.exception.InvalidDataException;
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.domain.spi.IUserPersistencePort;
-import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
+import com.bootcamp.emazon.user_micro.config.security.JwtService;
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
+import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
+import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

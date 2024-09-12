@@ -1,7 +1,7 @@
-package com.bootcamp.emazonapi.driven.mapper;
+package com.bootcamp.emazon.stock_micro.driven.mapper;
 
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.driven.entity.ArticuloEntity;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.driven.entity.ArticuloEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

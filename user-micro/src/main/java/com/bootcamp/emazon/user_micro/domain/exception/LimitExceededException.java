@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.domain.exception;
+package com.bootcamp.emazon.user_micro.domain.exception;
 
 public class LimitExceededException extends RuntimeException {
     public LimitExceededException(String message) {

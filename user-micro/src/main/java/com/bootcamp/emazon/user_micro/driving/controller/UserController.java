@@ -1,16 +1,14 @@
-package com.bootcamp.emazonapi.driving.controller;
+package com.bootcamp.emazon.user_micro.driving.controller;
 
-
-import com.bootcamp.emazonapi.domain.api.IUserServicePort;
-
-import com.bootcamp.emazonapi.domain.service.User;
-import com.bootcamp.emazonapi.driving.dto.request.AutenticacionRequest;
-import com.bootcamp.emazonapi.driving.dto.request.RegistroRequest;
-import com.bootcamp.emazonapi.driving.dto.response.AutenticacionResponse;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
-import com.bootcamp.emazonapi.driving.dto.response.RegistroResponse;
-import com.bootcamp.emazonapi.driving.mapper.IUserRequestMapper;
-import com.bootcamp.emazonapi.driving.mapper.IUserResponseMapper;
+import com.bootcamp.emazon.user_micro.domain.api.IUserServicePort;
+import com.bootcamp.emazon.user_micro.domain.service.User;
+import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
+import com.bootcamp.emazon.user_micro.driving.dto.request.RegistroRequest;
+import com.bootcamp.emazon.user_micro.driving.dto.response.AutenticacionResponse;
+import com.bootcamp.emazon.user_micro.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.user_micro.driving.dto.response.RegistroResponse;
+import com.bootcamp.emazon.user_micro.driving.mapper.IUserRequestMapper;
+import com.bootcamp.emazon.user_micro.driving.mapper.IUserResponseMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -61,8 +59,8 @@ public class UserController {
     })
     @GetMapping("/")
     public ResponseEntity<PagedResponse<RegistroResponse>> obtenerUsuarios(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                                      @RequestParam(value = "size", defaultValue = "3") int size,
-                                                                      @RequestParam(value = "order", defaultValue = "") String order) {
+                                                                           @RequestParam(value = "size", defaultValue = "3") int size,
+                                                                           @RequestParam(value = "order", defaultValue = "") String order) {
         return ResponseEntity.ok(userResponseMapper.registroToResponseList(userService.listarUsuarios(page, size, order)));
     }
 }

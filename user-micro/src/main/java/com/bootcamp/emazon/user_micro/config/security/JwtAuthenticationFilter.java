@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config.security;
+package com.bootcamp.emazon.user_micro.config.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -33,11 +33,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         // Ignorar el filtro para rutas específicas como "/registro" o "/autenticacion"
-        String requestPath = request.getRequestURI();
+        /*String requestPath = request.getRequestURI();
         if (requestPath.equals("/register") || requestPath.equals("/login")) {
             filterChain.doFilter(request, response);
             return;
-        }
+        }*/
 
         final String token = getTokenFromRequest(request);
         final String username;

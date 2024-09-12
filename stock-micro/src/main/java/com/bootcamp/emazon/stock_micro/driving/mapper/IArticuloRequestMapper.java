@@ -1,7 +1,8 @@
-package com.bootcamp.emazonapi.driving.mapper;
+package com.bootcamp.emazon.stock_micro.driving.mapper;
 
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.driving.dto.request.AddArticuloRequest;
+
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.driving.dto.request.AddArticuloRequest;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

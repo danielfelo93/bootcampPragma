@@ -1,7 +1,7 @@
-package com.bootcamp.emazonapi.domain.service;
+package com.bootcamp.emazon.stock_micro.domain.service;
 
-import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
-import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.EmptyFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.LimitExceededException;
 
 import static java.util.Objects.requireNonNull;
 

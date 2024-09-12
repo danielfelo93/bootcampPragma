@@ -1,10 +1,12 @@
-package com.bootcamp.emazonapi.driving.controller;
+package com.bootcamp.emazon.stock_micro.driving.controller;
 
-import com.bootcamp.emazonapi.domain.api.IArticuloServicePort;
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.driving.dto.request.AddArticuloRequest;
-import com.bootcamp.emazonapi.driving.dto.response.*;
-import com.bootcamp.emazonapi.driving.mapper.*;
+import com.bootcamp.emazon.stock_micro.domain.api.IArticuloServicePort;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.driving.dto.request.AddArticuloRequest;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.ArticuloResponse;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.driving.mapper.IArticuloRequestMapper;
+import com.bootcamp.emazon.stock_micro.driving.mapper.IArticuloResponseMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -30,7 +32,6 @@ public class ArticuloController {
             @ApiResponse(responseCode = "201", description = "Artículo creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
-
     @PostMapping("/admin/")
     public ResponseEntity<Void> crearArticulo(@RequestBody AddArticuloRequest request) {
 
@@ -65,8 +66,8 @@ public class ArticuloController {
     })
     @GetMapping("/")
     public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulos(@RequestParam(value = "page", defaultValue = "0") int page,
-                                                                     @RequestParam(value = "size", defaultValue = "3") int size,
-                                                                     @RequestParam(value = "order", defaultValue = "") String order) {
+                                                                            @RequestParam(value = "size", defaultValue = "3") int size,
+                                                                            @RequestParam(value = "order", defaultValue = "") String order) {
 
         // Llamar al use case para obtener los artículos
         PagedResponse<Articulo> articulos = articuloServicePort.listarArticulos(page, size, order);

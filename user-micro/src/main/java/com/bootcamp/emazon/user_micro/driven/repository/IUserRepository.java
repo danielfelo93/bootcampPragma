@@ -1,6 +1,7 @@
-package com.bootcamp.emazonapi.driven.repository;
+package com.bootcamp.emazon.user_micro.driven.repository;
 
-import com.bootcamp.emazonapi.driven.entity.UserEntity;
+
+import com.bootcamp.emazon.user_micro.driven.entity.UserEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

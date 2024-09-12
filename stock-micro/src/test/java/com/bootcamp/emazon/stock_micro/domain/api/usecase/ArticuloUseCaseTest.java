@@ -1,14 +1,14 @@
-package com.bootcamp.emazonapi.domain.api.usecase;
+package com.bootcamp.emazon.stock_micro.domain.api.usecase;
 
-import com.bootcamp.emazonapi.domain.exception.EmptyFieldException;
-import com.bootcamp.emazonapi.domain.exception.LimitExceededException;
-import com.bootcamp.emazonapi.domain.service.Articulo;
-import com.bootcamp.emazonapi.domain.service.Categoria;
-import com.bootcamp.emazonapi.domain.service.Marca;
-import com.bootcamp.emazonapi.domain.spi.IArticuloPersistencePort;
-import com.bootcamp.emazonapi.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazonapi.domain.spi.IMarcaPersistencePort;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.domain.exception.EmptyFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.LimitExceededException;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

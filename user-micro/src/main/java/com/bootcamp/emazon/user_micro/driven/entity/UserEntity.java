@@ -1,6 +1,6 @@
-package com.bootcamp.emazonapi.driven.entity;
+package com.bootcamp.emazon.user_micro.driven.entity;
 
-import com.bootcamp.emazonapi.config.security.UserRole;
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

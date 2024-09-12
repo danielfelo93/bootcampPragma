@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.domain.service;
+package com.bootcamp.emazon.user_micro.domain.service;
 
 public final class ConstantesDominio {
 

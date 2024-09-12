@@ -1,13 +1,10 @@
-package com.bootcamp.emazonapi.driving.mapper;
+package com.bootcamp.emazon.stock_micro.driving.mapper;
 
-import com.bootcamp.emazonapi.domain.service.Marca;
-import com.bootcamp.emazonapi.driving.dto.response.ArticuloMarcaResponse;
-import com.bootcamp.emazonapi.driving.dto.response.MarcaResponse;
-import com.bootcamp.emazonapi.driving.dto.response.PagedResponse;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.ArticuloMarcaResponse;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.MarcaResponse;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface IMarcaResponseMapper {

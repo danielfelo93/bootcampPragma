@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.config.exceptionhandler;
+package com.bootcamp.emazon.user_micro.config.exceptionhandler;
 
 import java.time.LocalDateTime;
 

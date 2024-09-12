@@ -1,4 +1,4 @@
-package com.bootcamp.emazonapi.driving.dto.request;
+package com.bootcamp.emazon.stock_micro.driving.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
