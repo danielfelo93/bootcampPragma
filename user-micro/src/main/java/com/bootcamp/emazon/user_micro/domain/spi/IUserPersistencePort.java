@@ -14,6 +14,6 @@ public interface IUserPersistencePort {
     boolean existsByCorreo(String correo);
     PagedResponse<User> listarUsuarios(int page, int size, String order);
 
-
+    Optional<Object> findByCorreo(String username);
 }
 

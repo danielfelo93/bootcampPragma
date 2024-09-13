@@ -70,4 +70,9 @@ public class UserAdaptador implements IUserPersistencePort {
                 userPage.isLast()
         );
     }
+
+    @Override
+    public Optional<Object> findByCorreo(String username) {
+        return Optional.empty();
+    }
 }

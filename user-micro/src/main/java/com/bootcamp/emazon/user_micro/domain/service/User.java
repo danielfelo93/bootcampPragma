@@ -29,7 +29,6 @@ public class User {
         this.apellido = apellido;
         this.documentoDeIdentidad = documentoDeIdentidad;
         this.celular = celular;
-        System.out.println("Fecha de Nacimiento antes de asignar: " + fechaNacimiento);
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.contrasena = contrasena;

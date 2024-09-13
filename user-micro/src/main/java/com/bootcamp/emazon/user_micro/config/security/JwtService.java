@@ -17,6 +17,8 @@ import java.util.Map;
 import java.util.function.Function;
 
 
+
+
 @Service
 public class JwtService {
 
@@ -34,7 +36,8 @@ public class JwtService {
 
     public boolean isTokenValid(String token, UserDetails userDetails) {
         final String username = getUsernameFromToken(token);
-        return (username.equals(userDetails.getUsername())&& !isTokenExpired(token));
+        boolean valid = username.equals(userDetails.getUsername()) && !isTokenExpired(token);
+        return valid;
     }
 
     // Metodo para extraer los Claims del token

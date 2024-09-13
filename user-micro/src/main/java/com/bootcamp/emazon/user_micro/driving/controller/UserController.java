@@ -1,5 +1,7 @@
 package com.bootcamp.emazon.user_micro.driving.controller;
 
+
+import com.bootcamp.emazon.user_micro.config.security.JwtService;
 import com.bootcamp.emazon.user_micro.domain.api.IUserServicePort;
 import com.bootcamp.emazon.user_micro.domain.service.User;
 import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
@@ -16,6 +18,8 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -28,6 +32,8 @@ public class UserController {
     private final IUserServicePort userService;
     private final IUserRequestMapper userRequestMapper;
     private final IUserResponseMapper userResponseMapper;
+    private final JwtService jwtService;
+    private final UserDetailsService userDetailsService;
 
 
     @PostMapping("/register")
@@ -49,6 +55,30 @@ public class UserController {
             return ResponseEntity.ok(response);
         } else {
             throw new RuntimeException("Error en la autenticación");
+        }
+    }
+
+    @Operation(summary = "Validar token JWT", description = "Valida un token JWT proporcionado")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Token válido"),
+            @ApiResponse(responseCode = "401", description = "Token inválido o expirado")
+    })
+    @GetMapping("/validate-token")
+    public ResponseEntity<String> validarToken(@RequestParam("token") String token) {
+        try {
+            String username = jwtService.getUsernameFromToken(token);
+
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username); // Asegúrate de que el servicio de usuario pueda cargar UserDetails
+            System.out.println("UserDetails: " + userDetails);
+            boolean isValid = jwtService.isTokenValid(token, userDetails);
+            System.out.println("Is Token Valid: " + isValid);
+            if (jwtService.isTokenValid(token, userDetails)) {
+                return ResponseEntity.ok("Token válido");
+            } else {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token inválido o expirado");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token inválido o expirado");
         }
     }
 

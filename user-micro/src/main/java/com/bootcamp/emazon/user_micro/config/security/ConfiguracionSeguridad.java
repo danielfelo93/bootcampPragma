@@ -74,4 +74,5 @@ public class ConfiguracionSeguridad {
 
         return httpSecurity.build();
     }
+
 }

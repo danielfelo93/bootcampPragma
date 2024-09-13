@@ -32,13 +32,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        // Ignorar el filtro para rutas específicas como "/registro" o "/autenticacion"
-        /*String requestPath = request.getRequestURI();
-        if (requestPath.equals("/register") || requestPath.equals("/login")) {
-            filterChain.doFilter(request, response);
-            return;
-        }*/
-
         final String token = getTokenFromRequest(request);
         final String username;
         if (token == null) {
@@ -47,6 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
 
         username = jwtService.getUsernameFromToken(token);
+        System.out.println("Username from token: " + username);
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication()==null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
