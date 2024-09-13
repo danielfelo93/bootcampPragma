@@ -1,43 +1,32 @@
-/*
 package com.bootcamp.emazon.stock_micro.config.security;
 
 import java.security.Key;
+import java.util.Date;
+import java.util.function.Function;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Function;
-
 
 @Service
 public class JwtService {
 
     @Value("${jwt.secret.key}")
     private String SECRET_KEY;
-    private static final long EXPIRATION_TIME = 86400000;
 
-    public String getToken(String correo) {
-        return getToken(new HashMap<>(), correo);
-    }
+    private static final long EXPIRATION_TIME = 86400000; // 1 día
 
     public String getUsernameFromToken(String token) {
         return getClaim(token, Claims::getSubject);
     }
 
-    public boolean isTokenValid(String token, UserDetailsResponse userDetails) {
-        final String username = getUsernameFromToken(token);
-        return (username.equals(userDetails.getUsername())&& !isTokenExpired(token));
+    public boolean isTokenValid(String token) {
+        return !isTokenExpired(token);
     }
 
-    // Metodo para extraer los Claims del token
     private Claims getClaimsFromToken(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(getKey())
@@ -46,7 +35,7 @@ public class JwtService {
                 .getBody();
     }
 
-    public <T> T getClaim(String token, Function<Claims,T> claimResolver) {
+    public <T> T getClaim(String token, Function<Claims, T> claimResolver) {
         final Claims claims = getClaimsFromToken(token);
         return claimResolver.apply(claims);
     }
@@ -59,22 +48,8 @@ public class JwtService {
         return getExpiration(token).before(new Date());
     }
 
-    private String getToken(Map<String, Object> extraClaims, String correo) {
-        return Jwts
-                .builder()
-                .setClaims(extraClaims)
-                .setSubject(correo)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+EXPIRATION_TIME))
-                .signWith(getKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
-
     private Key getKey() {
-        byte[] keyBytes=Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
-
-
 }
-*/

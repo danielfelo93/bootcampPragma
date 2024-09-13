@@ -107,9 +107,10 @@ class CategoriaUseCaseTest {
 
         //Arrange
         Categoria categoria = new Categoria(1L,"EjemploCategoria","Ejemplo de una descripcion válida");
+        String token = "Bearer some-jwt-token";
 
         // Act
-        categoriaUseCase.guardarCategoria(categoria);
+        categoriaUseCase.guardarCategoria(token, categoria);
 
         // Assert
         verify(categoriaPersistencePort, times(1)).guardarCategoria(categoria);
