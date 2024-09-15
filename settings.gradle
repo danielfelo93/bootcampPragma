@@ -1,3 +1,4 @@
 rootProject.name = 'emazon-microservices'
 include 'user-micro'
 include 'stock-micro'
+include 'transaccion-micro'

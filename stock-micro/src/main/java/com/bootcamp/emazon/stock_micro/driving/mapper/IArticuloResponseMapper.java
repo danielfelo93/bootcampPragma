@@ -6,8 +6,6 @@ import com.bootcamp.emazon.stock_micro.driving.dto.response.ArticuloResponse;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import org.mapstruct.Mapper;
 
-import java.util.List;
-
 @Mapper(componentModel = "spring")
 public interface IArticuloResponseMapper {
 

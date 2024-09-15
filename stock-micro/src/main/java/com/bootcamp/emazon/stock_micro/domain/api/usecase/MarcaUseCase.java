@@ -7,8 +7,6 @@ import com.bootcamp.emazon.stock_micro.domain.service.Marca;
 import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 
-import java.util.List;
-
 public class MarcaUseCase implements IMarcaServicePort {
 
     private IMarcaPersistencePort marcaPersistencePort;

@@ -18,7 +18,6 @@ import com.bootcamp.emazon.stock_micro.driven.mapper.IMarcaEntityMapper;
 import com.bootcamp.emazon.stock_micro.driven.repository.IArticuloRepository;
 import com.bootcamp.emazon.stock_micro.driven.repository.ICategoriaRepository;
 import com.bootcamp.emazon.stock_micro.driven.repository.IMarcaRepository;
-import com.bootcamp.emazon.stock_micro.driving.controller.UserClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,12 +1,9 @@
-package com.bootcamp.emazon.stock_micro.driving.dto.response;
-
-
+package com.bootcamp.emazon.transaccion_micro.driving.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.math.BigDecimal;
-import java.util.Set;
 
 @AllArgsConstructor
 @Getter
@@ -22,7 +19,4 @@ public class ArticuloResponse {
 
     private final BigDecimal precio;
 
-    private ArticuloMarcaResponse marca;
-
-    private Set<ArticuloCategoriaResponse> categorias;
 }

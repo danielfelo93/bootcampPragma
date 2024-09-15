@@ -4,7 +4,6 @@ package com.bootcamp.emazon.stock_micro.domain.api.usecase;
 import com.bootcamp.emazon.stock_micro.domain.api.ICategoriaServicePort;
 import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
 import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
-import com.bootcamp.emazon.stock_micro.driving.controller.UserClient;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 
 public class CategoriaUseCase implements ICategoriaServicePort {

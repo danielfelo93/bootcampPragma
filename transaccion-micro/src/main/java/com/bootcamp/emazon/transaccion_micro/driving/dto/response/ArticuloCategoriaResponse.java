@@ -1,13 +1,11 @@
-package com.bootcamp.emazon.stock_micro.driving.dto.response;
-
-
+package com.bootcamp.emazon.transaccion_micro.driving.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class ArticuloMarcaResponse {
+public class ArticuloCategoriaResponse {
 
     private final long id;
 

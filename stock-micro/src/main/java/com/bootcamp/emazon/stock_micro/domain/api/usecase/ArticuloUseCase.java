@@ -11,7 +11,6 @@ import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
 import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.HashSet;
 import java.util.List;
