@@ -40,8 +40,8 @@ public class ConfiguracionBeans {
     }
 
     @Bean
-    public ICategoriaServicePort categoriaServicePort(ICategoriaPersistencePort categoriaPersistencePort, UserClient userClient) {
-        return new CategoriaUseCase(categoriaPersistencePort, userClient);
+    public ICategoriaServicePort categoriaServicePort(ICategoriaPersistencePort categoriaPersistencePort) {
+        return new CategoriaUseCase(categoriaPersistencePort);
     }
 
     @Bean

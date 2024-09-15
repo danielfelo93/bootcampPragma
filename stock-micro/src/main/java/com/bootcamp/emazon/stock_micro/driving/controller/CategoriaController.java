@@ -34,7 +34,7 @@ public class CategoriaController {
     })
     @PostMapping("/admin/crear-categoria")
     public ResponseEntity<Void> crearCategoria(@RequestHeader("Authorization") String token, @RequestBody AddCategoriaRequest request) {
-        categoriaServicePort.guardarCategoria(token, categoriaRequestMapper.addRequestToCategoria(request));
+        categoriaServicePort.guardarCategoria(categoriaRequestMapper.addRequestToCategoria(request));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
