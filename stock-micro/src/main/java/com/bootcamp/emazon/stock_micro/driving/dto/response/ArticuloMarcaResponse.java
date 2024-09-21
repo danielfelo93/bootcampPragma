@@ -1,7 +1,5 @@
 package com.bootcamp.emazon.stock_micro.driving.dto.response;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
