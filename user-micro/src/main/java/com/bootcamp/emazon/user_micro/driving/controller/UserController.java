@@ -2,7 +2,10 @@ package com.bootcamp.emazon.user_micro.driving.controller;
 
 
 import com.bootcamp.emazon.user_micro.config.security.JwtService;
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
 import com.bootcamp.emazon.user_micro.domain.api.IUserServicePort;
+import com.bootcamp.emazon.user_micro.domain.exception.InvalidTokenException;
+import com.bootcamp.emazon.user_micro.domain.service.ConstantesDominio;
 import com.bootcamp.emazon.user_micro.domain.service.User;
 import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
 import com.bootcamp.emazon.user_micro.driving.dto.request.RegistroRequest;
@@ -36,9 +39,12 @@ public class UserController {
     private final UserDetailsService userDetailsService;
 
 
-    @PostMapping("/register")
-    public ResponseEntity<AutenticacionResponse> registrarUsuario(@RequestBody RegistroRequest registroRequest) {
+    @PostMapping("/register/{rol}")
+    public ResponseEntity<AutenticacionResponse> registrarUsuario(@PathVariable("rol") UserRole rol,
+                                                                  @RequestBody RegistroRequest registroRequest) {
+        registroRequest.setRol(rol);
         User user = userRequestMapper.registroRequestToUser(registroRequest);
+
         String token = userService.registrarUsuario(user);
 
         AutenticacionResponse autenticacionResponse = userResponseMapper.userToAutenticacionResponse(token);
@@ -54,7 +60,7 @@ public class UserController {
             AutenticacionResponse response = userResponseMapper.userToAutenticacionResponse(token.get());
             return ResponseEntity.ok(response);
         } else {
-            throw new RuntimeException("Error en la autenticación");
+            throw new InvalidTokenException(ConstantesDominio.AUTENTICACION_FALLIDA);
         }
     }
 
@@ -69,9 +75,7 @@ public class UserController {
             String username = jwtService.getUsernameFromToken(token);
 
             UserDetails userDetails = userDetailsService.loadUserByUsername(username); // Asegúrate de que el servicio de usuario pueda cargar UserDetails
-            System.out.println("UserDetails: " + userDetails);
-            boolean isValid = jwtService.isTokenValid(token, userDetails);
-            System.out.println("Is Token Valid: " + isValid);
+
             if (jwtService.isTokenValid(token, userDetails)) {
                 return ResponseEntity.ok("Token válido");
             } else {

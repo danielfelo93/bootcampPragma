@@ -3,8 +3,7 @@ package com.bootcamp.emazon.user_micro.config.security;
 public enum UserRole {
     ADMIN("ROLE_ADMIN"),
     AUX_BODEGA("ROLE_AUX_BODEGA"),
-    CLIENT("ROLE_CLIENT"),
-    USER("ROLE_USER");
+    CLIENT("ROLE_CLIENT");
 
     private final String rol;
 

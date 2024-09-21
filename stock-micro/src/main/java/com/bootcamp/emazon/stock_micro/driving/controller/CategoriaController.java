@@ -1,6 +1,7 @@
 package com.bootcamp.emazon.stock_micro.driving.controller;
 
 
+import com.bootcamp.emazon.stock_micro.config.security.JwtService;
 import com.bootcamp.emazon.stock_micro.domain.api.ICategoriaServicePort;
 import com.bootcamp.emazon.stock_micro.driving.dto.request.AddCategoriaRequest;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.CategoriaResponse;
@@ -17,6 +18,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/categorias")
@@ -26,13 +28,14 @@ public class CategoriaController {
     private final ICategoriaServicePort categoriaServicePort;
     private final ICategoriaRequestMapper categoriaRequestMapper;
     private final ICategoriaResponseMapper categoriaResponseMapper;
+    private final JwtService jwtService;
 
     @Operation(summary = "Agregar una nueva categoría", description = "Crea una nueva categoría")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Categoría creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
-    @PostMapping("/admin/crear-categoria")
+    @PostMapping("/admin")
     public ResponseEntity<Void> crearCategoria(@RequestHeader("Authorization") String token, @RequestBody AddCategoriaRequest request) {
         categoriaServicePort.guardarCategoria(categoriaRequestMapper.addRequestToCategoria(request));
         return ResponseEntity.status(HttpStatus.CREATED).build();
@@ -47,6 +50,9 @@ public class CategoriaController {
     public ResponseEntity<PagedResponse<CategoriaResponse>> obtenerCategorias(@RequestParam(value = "page", defaultValue = "0") int page,
                                                                               @RequestParam(value = "size", defaultValue = "3") int size,
                                                                               @RequestParam(value = "order", defaultValue = "") String order) {
+        if (!jwtService.isTokenValid("Bearer token")) { // Ajusta esto para pasar el token correcto
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Token inválido");
+        }
         return ResponseEntity.ok(categoriaResponseMapper.categoriaToResponseList(categoriaServicePort.listarCategorias(page, size, order)));
         }
 

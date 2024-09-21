@@ -1,5 +1,6 @@
 package com.bootcamp.emazon.user_micro.driving.dto.request;
 
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -43,5 +44,7 @@ public class RegistroRequest {
 
     @NotBlank(message = "Contraseña es obligatoria")
     private String contrasena;
+
+    private UserRole rol;
 
 }

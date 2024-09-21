@@ -1,8 +1,12 @@
 package com.bootcamp.emazon.stock_micro.driving.controller;
 
 import com.bootcamp.emazon.stock_micro.domain.api.IArticuloServicePort;
+import com.bootcamp.emazon.stock_micro.domain.exception.DuplicatedFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.LimitExceededException;
 import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.domain.service.ConstantesDominio;
 import com.bootcamp.emazon.stock_micro.driving.dto.request.AddArticuloRequest;
+import com.bootcamp.emazon.stock_micro.driving.dto.request.SuministroRequest;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.ArticuloResponse;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
 import com.bootcamp.emazon.stock_micro.driving.mapper.IArticuloRequestMapper;
@@ -11,18 +15,23 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/articulos")
 @RequiredArgsConstructor
 public class ArticuloController {
-    
+
+    private static final Logger logger = LoggerFactory.getLogger(ArticuloController.class);
     private final IArticuloServicePort articuloServicePort;
     private final IArticuloRequestMapper articuloRequestMapper;
     private final IArticuloResponseMapper articuloResponseMapper;
@@ -32,19 +41,19 @@ public class ArticuloController {
             @ApiResponse(responseCode = "201", description = "Artículo creada con éxito"),
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
-    @PostMapping("/admin/")
+    @PostMapping("/admin")
     public ResponseEntity<Void> crearArticulo(@RequestBody AddArticuloRequest request) {
 
         // Validación de las categorías
         List<Long> categoriaIds = request.getCategoriaIds();
         if (categoriaIds == null || categoriaIds.isEmpty() || categoriaIds.size() > 3) {
-            throw new IllegalArgumentException("El artículo debe tener entre 1 y 3 categorías.");
+            throw new LimitExceededException(ConstantesDominio.CAMPO_CATEGORIA_TAMANO_EXCEDIDO_MENSAJE);
         }
 
         // Validación de duplicados en las categorías
         List<Long> uniqueCategoriaIds = new ArrayList<>(categoriaIds);
         if (uniqueCategoriaIds.size() != categoriaIds.size()) {
-            throw new IllegalArgumentException("No se permiten categorías duplicadas.");
+            throw new DuplicatedFieldException(ConstantesDominio.CAMPO_CATEGORIA_DUPLICADA_MENSAJE);
         }
 
         // Mapear el request a la entidad Articulo sin asociar aún la marca ni las categorías
@@ -52,14 +61,39 @@ public class ArticuloController {
 
 
         // Delegar la lógica de guardar artículo y asociar marca y categorías al puerto de servicio
-        articuloServicePort.guardarArticulo(articulo, request.getMarcaId(), request.getCategoriaIds());
+        articuloServicePort.crearArticulo(articulo, request.getMarcaId(), request.getCategoriaIds());
 
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @Operation(summary = "Agregar suministros a un artículo", description = "Incrementa la cantidad de un artículo existente")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Suministros agregados con éxito"),
+            @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
+    })
+    @PutMapping("/aux_bodega")
+    public ResponseEntity<Void> agregarArticulos(@RequestBody SuministroRequest request) {
+        try {
 
-    @Operation(summary = "Obtener todos las articulos", description = "Devuelve una lista de todos los articulos paginados")
+            long articuloId = request.getArticuloId();
+            int cantidad = request.getCantidad();
+            logger.info("Artículo ID: {} Cantidad: {}", articuloId, cantidad);
+
+            // Llamar al use case para agregar el suministro
+            articuloServicePort.agregarArticulos(articuloId, cantidad);
+            return ResponseEntity.ok().build();
+            // Lógica para agregar o actualizar el artículo
+        } catch (NoSuchElementException e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Artículo no encontrado", e);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurrió un error inesperado", e);
+        }
+
+    }
+
+
+    @Operation(summary = "Obtener todos los articulos", description = "Devuelve una lista de todos los articulos paginados")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Articuloss obtenidos con éxito"),
             @ApiResponse(responseCode = "500", description = "Error en el servidor")
@@ -80,7 +114,7 @@ public class ArticuloController {
         }
 
     @Operation(summary = "Obtener artículos por nombre de categoría", description = "Devuelve una lista de artículos filtrados por nombre de categoría paginados")
-    @GetMapping("/categoria")
+    @GetMapping("/por-categoria")
     public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulosPorCategoria(
             @RequestParam(value = "nombreCategoria") String nombreCategoria,
             @RequestParam(value = "page", defaultValue = "0") int page,
@@ -93,7 +127,7 @@ public class ArticuloController {
     }
 
     @Operation(summary = "Obtener artículos por nombre de marca", description = "Devuelve una lista de artículos filtrados por nombre de marca paginados")
-    @GetMapping("/marca")
+    @GetMapping("/por-marca")
     public ResponseEntity<PagedResponse<ArticuloResponse>> obtenerArticulosPorMarca(
             @RequestParam(value = "nombreMarca") String nombreMarca,
             @RequestParam(value = "page", defaultValue = "0") int page,

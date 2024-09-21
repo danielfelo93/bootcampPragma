@@ -60,7 +60,6 @@ public class ConfiguracionSeguridad {
         httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/users/register").permitAll();
                     auth.requestMatchers("/users/**").permitAll();
                     auth.anyRequest().authenticated();
                 })

@@ -32,7 +32,7 @@ public class User {
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.contrasena = contrasena;
-        this.rol = UserRole.AUX_BODEGA;
+        this.rol = rol;
 
         validate();
     }
@@ -40,20 +40,20 @@ public class User {
     // Validaciones
     public void validate() {
         if (fechaNacimiento == null) {
-            throw new IllegalArgumentException("La fecha de nacimiento no puede ser nula.");
+            throw new IllegalArgumentException(ConstantesDominio.FECHANACIMIENTO_NULL_MENSAJE);
         }
-        if (fechaNacimiento.isAfter(LocalDate.now().minusYears(18))) {
-            throw new InvalidDataException("El usuario debe ser mayor de edad");
+        if (fechaNacimiento.isAfter(LocalDate.now().minusYears(ConstantesDominio.MIN_EDAD))) {
+            throw new InvalidDataException(ConstantesDominio.FECHANACIMIENTO_EDAD_MENOR_MENSAJE);
         }
         // Validaciones de otros campos
-        if (!correo.matches("^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-            throw new InvalidDataException("Correo inválido");
+        if (!correo.matches(ConstantesDominio.CORREO_REGEX)) {
+            throw new InvalidDataException(ConstantesDominio.CORREO_INVALIDO_MENSAJE);
         }
-        if (!celular.matches("\\+\\d{10,13}")) {
-            throw new InvalidDataException("Número de celular inválido");
+        if (!celular.matches(ConstantesDominio.CELULAR_REGEX)) {
+            throw new InvalidDataException(ConstantesDominio.CELULAR_INVALIDO_MENSAJE);
         }
-        if (!documentoDeIdentidad.matches("\\d{10}")) {
-            throw new InvalidDataException("Documento de identidad inválido");
+        if (!documentoDeIdentidad.matches(ConstantesDominio.DOCUMENTO_REGEX)) {
+            throw new InvalidDataException(ConstantesDominio.DOCUMENTO_INVALIDO_MENSAJE);
         }
     }
 

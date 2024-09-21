@@ -1,0 +1,281 @@
+package com.bootcamp.emazon.stock_micro.domain.api.usecase;
+
+import com.bootcamp.emazon.stock_micro.domain.exception.DuplicatedFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.EmptyFieldException;
+import com.bootcamp.emazon.stock_micro.domain.exception.LimitExceededException;
+import com.bootcamp.emazon.stock_micro.domain.service.Articulo;
+import com.bootcamp.emazon.stock_micro.domain.service.Categoria;
+import com.bootcamp.emazon.stock_micro.domain.service.Marca;
+import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.ICategoriaPersistencePort;
+import com.bootcamp.emazon.stock_micro.domain.spi.IMarcaPersistencePort;
+import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import java.math.BigDecimal;
+import java.util.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
+
+@ExtendWith(MockitoExtension.class)
+class ArticuloUseCaseTest {
+
+    @Mock
+    private IArticuloPersistencePort articuloPersistencePort;
+
+    @Mock
+    private IMarcaPersistencePort marcaPersistencePort;
+
+    @Mock
+    private ICategoriaPersistencePort categoriaPersistencePort;
+
+    @InjectMocks
+    private ArticuloUseCase articuloUseCase;
+
+    private Articulo articulo1;
+    private Articulo articulo2;
+    private Articulo articulo3;
+    private Marca marca1;
+    private Set<Categoria> categorias;
+
+    private void assertPagedResponseContentEquals(PagedResponse<Articulo> expected, PagedResponse<Articulo> actual) {
+        assertEquals(expected.getContent(), actual.getContent(), "Contenido no coincide");
+    }
+
+    @BeforeEach
+    void setUp() {
+        marca1 = new Marca(1L, "MarcaEjemplo", "..................");
+        categorias = new HashSet<>();
+        categorias.add(new Categoria(1L, "CategoríaEjemplo", "Descripción de Categoría"));
+        articulo1 = new Articulo(1L, "Zapatos", "Descripción de Zapatos", 1,new BigDecimal(1000), marca1, categorias);
+        articulo2 = new Articulo(2L, "Camiseta", "Descripción de Camiseta", 2, new BigDecimal(2500), marca1, categorias);
+        articulo2 = new Articulo(3L, "Collar", "Descripción de Collar",12, new BigDecimal(50000), marca1, categorias);
+    }
+
+    private static Collection<String> provideSortingOptions() {
+        return Arrays.asList("", "asc", "desc");
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideSortingOptions")
+    void shouldReturnArticulosSuccessfully(String sortOption) {
+        // Arrange
+        List<Articulo> articulos = Arrays.asList(articulo1, articulo2, articulo3);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 3, 1, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, sortOption)).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, sortOption);
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulos(0, 3, sortOption);
+    }
+
+    @Test
+    void shouldReturnEmptyListWhenNoArticulosFound() {
+        // Arrange
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(Arrays.asList(), 0, 3, 0, 0, true);
+        when(articuloPersistencePort.listarArticulos(0, 3, "")).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulos(0, 3, "");
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulos(0, 3, "");
+    }
+
+    @Test
+    void shouldReturnArticulosSuccessfullyByCategoria() {
+        // Arrange
+        List<Articulo> articulos = Arrays.asList(articulo1, articulo2);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 2, 1, true);
+        String nombreCategoria = "CategoríaEjemplo";
+        when(articuloPersistencePort.listarArticulosPorCategoria(nombreCategoria, 0, 3, "")).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulosPorCategoria(nombreCategoria, 0, 3, "");
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulosPorCategoria(nombreCategoria, 0, 3, "");
+    }
+
+    @Test
+    void shouldReturnArticulosSuccessfullyByMarca() {
+        // Arrange
+        List<Articulo> articulos = Arrays.asList(articulo1, articulo2);
+        PagedResponse<Articulo> pagedResponse = new PagedResponse<>(articulos, 0, 3, 2, 1, true);
+        String nombreMarca = "MarcaEjemplo";
+        when(articuloPersistencePort.listarArticulosPorMarca(nombreMarca, 0, 3, "")).thenReturn(pagedResponse);
+
+        // Act
+        PagedResponse<Articulo> result = articuloUseCase.listarArticulosPorMarca(nombreMarca, 0, 3, "");
+
+        // Assert
+        assertPagedResponseContentEquals(pagedResponse, result);
+        verify(articuloPersistencePort).listarArticulosPorMarca(nombreMarca, 0, 3, "");
+    }
+
+    @Test
+    void shouldAddArticuloSuccessfully() {
+
+        //Arrange
+        Long marcaId = 1L;
+        Set<Long> categoriaIdsSet = new HashSet<>(Arrays.asList(1L, 2L));
+        List<Long> categoriaIdsList = new ArrayList<>(categoriaIdsSet);
+
+        when(categoriaPersistencePort.obtenerCategoriaPorId(1L)).thenReturn(Optional.of(new Categoria(1L, "Categoria1", "Descripción Categoria1")));
+        when(categoriaPersistencePort.obtenerCategoriaPorId(2L)).thenReturn(Optional.of(new Categoria(2L, "Categoria2", "Descripción Categoria2")));
+        when(marcaPersistencePort.obtenerMarcaPorId(marcaId)).thenReturn(Optional.of(new Marca(marcaId, "MarcaEjemplo", "Descripción de Marca")));
+
+        // Act
+        articuloUseCase.crearArticulo(articulo1, marcaId, categoriaIdsList);
+
+        // Assert
+        verify(articuloPersistencePort, times(1)).crearArticulo(articulo1);
+    }
+
+    BigDecimal precio = new BigDecimal("1000");
+
+    @Test
+    void shouldThrowEmptyFieldExceptionWhenNombreIsEmpty() {
+        // Arrange
+        assertThrows(EmptyFieldException.class, () -> {
+            new Articulo(4L,
+                    "",
+                    "Descripción válida",
+                    1,
+                    precio,
+                    marca1,
+                    categorias);
+        });
+    }
+    @Test
+    void shouldThrowEmptyFieldExceptionWhenDescripcionIsEmpty() {
+        // Arrange
+        assertThrows(EmptyFieldException.class, () -> {
+            new Articulo(5L,
+                    "EjemploArticulo",
+                    "",
+                    1,
+                    precio,
+                    marca1,
+                    categorias);
+        });
+    }
+    @Test
+    void shouldThrowCharacterLimitExceededExceptionWhenNombreExceedsLength() {
+        // Arrange
+        assertThrows(LimitExceededException.class, () -> {
+            new Articulo(6L,
+                    "Nombre que excede los 50 caracteres permitidos por la validación",
+                    "Ejemplo de una descripcion válida",
+                    1,
+                    precio,
+                    marca1,
+                    categorias);
+        });
+    }
+    @Test
+    void shouldThrowCharacterLimitExceededExceptionWhenDescripcionExceedsLength() {
+        // Arrange
+        assertThrows(LimitExceededException.class, () ->
+                new Articulo(
+                        7L,
+                        "EjemploArticulo",
+                        "Ejemplo de una descripcion Descripción que excede los 90 caracteres permitidos por la validación y debería devolver un error",
+                        1,
+                        precio,
+                        marca1,
+                        categorias
+                )
+        );
+
+    }
+
+    @Test
+    void shouldThrowExceptionWhenCategoriaNotFound() {
+        // Arrange
+        Long marcaId = 1L;
+        Set<Long> categoriaIdsSet = new HashSet<>(Arrays.asList(1L, 99L)); // 99L no existe
+        List<Long> categoriaIdsList = new ArrayList<>(categoriaIdsSet);
+
+
+        // Act & Assert
+        assertThrows(NoSuchElementException.class, () ->
+                articuloUseCase.crearArticulo(articulo1, marcaId, categoriaIdsList)
+        );
+    }
+
+    @Test
+    void shouldThrowDuplicatedFieldExceptionForDuplicateCategoriaIds() {
+
+        // Arrange
+        Long marcaId = 1L;
+        List<Long> categoriaIdsList = Arrays.asList(1L,1L);
+
+        // Configurar mocks para las categorías y la marca
+        when(categoriaPersistencePort.obtenerCategoriaPorId(1L)).thenReturn(Optional.of(new Categoria(1L, "Categoria1", "Descripción Categoria1")));
+        when(marcaPersistencePort.obtenerMarcaPorId(marcaId)).thenReturn(Optional.of(new Marca(marcaId, "MarcaEjemplo", "Descripción de Marca")));
+
+        // Crear el artículo con datos válidos
+        Articulo articulo = new Articulo(1L, "Articulo1", "Descripción Articulo1", 10, BigDecimal.TEN, new Marca(1L, "MarcaEjemplo", "Descripción de Marca"), new HashSet<>());
+
+        // Act & Assert
+        assertThrows(DuplicatedFieldException.class, () -> {
+            articuloUseCase.crearArticulo(articulo, marcaId, categoriaIdsList);
+        });
+
+        // Verificar que no se haya intentado guardar el artículo debido a la excepción
+        verify(articuloPersistencePort, never()).crearArticulo(any(Articulo.class));
+    }
+
+    @Test
+    void shouldAddArticulosSuccessfullyWhenArticuloExists() {
+        // Arrange
+        long articuloId = 1L;
+        int cantidadInicial = 10;
+        int cantidadParaAgregar = 5;
+        articulo1.setCantidad(cantidadInicial);
+
+        // Simular que el artículo existe en la persistencia
+        when(articuloPersistencePort.obtenerArticuloPorId(articuloId)).thenReturn(Optional.of(articulo1));
+
+        // Act
+        articuloUseCase.agregarArticulos(articuloId, cantidadParaAgregar);
+
+        // Assert
+        int cantidadEsperada = cantidadInicial + cantidadParaAgregar;
+        assertEquals(cantidadEsperada, articulo1.getCantidad());  // Verificar que la cantidad ha sido actualizada
+        verify(articuloPersistencePort, times(1)).agregarArticulos(articulo1);
+    }
+
+    @Test
+    void shouldThrowNoSuchElementExceptionWhenArticuloNotFound() {
+        // Arrange
+        long articuloId = 1L;
+        int cantidadParaAgregar = 5;
+
+        // Simular que el artículo no existe en la persistencia
+        when(articuloPersistencePort.obtenerArticuloPorId(articuloId)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        NoSuchElementException exception = assertThrows(NoSuchElementException.class, () -> {
+            articuloUseCase.agregarArticulos(articuloId, cantidadParaAgregar);
+        });
+
+        assertEquals("El articulo que buscas no existe", exception.getMessage());
+        verify(articuloPersistencePort, never()).agregarArticulos(any(Articulo.class));
+    }
+}

@@ -17,8 +17,6 @@ public class AddArticuloRequest {
 
     private String descripcion;
 
-    private int cantidad;
-
     private BigDecimal precio;
 
     private Long marcaId;

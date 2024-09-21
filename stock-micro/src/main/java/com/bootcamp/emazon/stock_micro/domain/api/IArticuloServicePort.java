@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface IArticuloServicePort {
 
-    void guardarArticulo(Articulo articulo, Long marcaId, List<Long> categoriaIds);
+    void crearArticulo(Articulo articulo, Long marcaId, List<Long> categoriaIds);
 
-    Articulo obtenerArticulo(String nombre);
+    void agregarArticulos(long articuloId, int cantidad);
 
     PagedResponse<Articulo> listarArticulos(int page, int size, String order);
 

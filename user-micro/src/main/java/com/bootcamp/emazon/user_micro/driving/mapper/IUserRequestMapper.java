@@ -13,7 +13,6 @@ public interface IUserRequestMapper {
 
     // Mapeo de RegistroRequest a User
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "rol", ignore = true)
     User registroRequestToUser(RegistroRequest registroRequest);
 
 

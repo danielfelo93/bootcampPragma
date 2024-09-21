@@ -29,7 +29,7 @@ public class MarcaController {
             @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
     })
 
-    @PostMapping("/admin/")
+    @PostMapping("/admin")
     public ResponseEntity<Void> crearMarca(@RequestBody AddMarcaRequest request) {
         marcaServicePort.guardarMarca(marcaRequestMapper.addRequestToMarca(request));
         return ResponseEntity.status(HttpStatus.CREATED).build();

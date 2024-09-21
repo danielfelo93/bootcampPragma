@@ -1,0 +1,100 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.3'
+	id 'io.spring.dependency-management' version '1.1.6'
+	id 'jacoco'
+}
+
+group = 'com.bootcamp.emazon'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+jacoco {
+	toolVersion = "0.8.8" // Versión de JaCoCo
+}
+
+test {
+	useJUnitPlatform()
+
+	finalizedBy jacocoTestReport // Genera el reporte de cobertura después de correr los tests
+
+	testLogging {
+		events "passed", "skipped", "failed"
+		exceptionFormat "full"
+		showStandardStreams = true
+	}
+}
+
+allprojects {
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'jacoco'
+
+	group = 'com.bootcamp.emazon'
+
+	jacocoTestReport {
+		reports {
+			xml.required = true
+			html.required = true // Genera un reporte HTML en build/reports/jacoco/test/html/
+		}
+	}
+
+	jacocoTestCoverageVerification {
+		violationRules {
+			rule {
+				limit {
+					minimum = 0.80 // Define un umbral mínimo de cobertura (80%)
+				}
+			}
+		}
+	}
+
+	dependencies {
+		// Dependencias comunes a todos los microservicios
+		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+		implementation 'org.springframework.boot:spring-boot-starter-security'
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+
+		implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+		annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testImplementation 'org.springframework.security:spring-security-test'
+		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+		testImplementation 'org.mockito:mockito-core'
+		testImplementation 'org.assertj:assertj-core'
+
+		implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+		runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+		runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+		implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+
+		runtimeOnly 'mysql:mysql-connector-java:8.0.32'
+
+	}
+}
+
+ext {
+	set('springCloudVersion', "2023.0.3")
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

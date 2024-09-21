@@ -3,10 +3,10 @@ package com.bootcamp.emazon.user_micro.config.exceptionhandler;
 import java.time.LocalDateTime;
 
 import com.bootcamp.emazon.user_micro.config.Constants;
-import com.bootcamp.emazon.user_micro.domain.exception.EmptyFieldException;
 import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
-import com.bootcamp.emazon.user_micro.domain.exception.LimitExceededException;
+import com.bootcamp.emazon.user_micro.domain.exception.InvalidTokenException;
 import com.bootcamp.emazon.user_micro.domain.exception.UserAlreadyExistsException;
+import com.bootcamp.emazon.user_micro.domain.service.ConstantesDominio;
 import com.bootcamp.emazon.user_micro.driven.exceptions.ElementNotFoundException;
 import com.bootcamp.emazon.user_micro.driven.exceptions.NoDataFoundException;
 import com.bootcamp.emazon.user_micro.driven.exceptions.ProductAlreadyExistsException;
@@ -21,28 +21,18 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ControllerAdvisor {
 
-    @ExceptionHandler(EmptyFieldException.class)
-    public ResponseEntity<ExceptionResponse> handleEmptyFieldException(EmptyFieldException exception) {
-        return ResponseEntity.badRequest().body(new ExceptionResponse(
-                exception.getMessage(), HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
-    }
-
-    @ExceptionHandler(LimitExceededException.class)
-    public ResponseEntity<ExceptionResponse> handleCharlimitException(LimitExceededException exception) {
-        return ResponseEntity.badRequest().body(new ExceptionResponse(
-                exception.getMessage(), HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
-    }
-
     @ExceptionHandler(NoDataFoundException.class)
     public ResponseEntity<ExceptionResponse> handleNoDataFoundException() {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(
                 Constants.DATOS_NO_ENCONTRADOS_EXCEPCION_MENSAJE, HttpStatus.NOT_FOUND.toString(), LocalDateTime.now()));
     }
+
     @ExceptionHandler(ProductAlreadyExistsException.class)
     public ResponseEntity<ExceptionResponse> handleProductAlreadyExistsException(ProductAlreadyExistsException exception) {
         return ResponseEntity.badRequest().body(new ExceptionResponse(exception.getMessage(),
                 HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
     }
+
     @ExceptionHandler(ElementNotFoundException.class)
     public ResponseEntity<ExceptionResponse> handleElementNotFoundException() {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(
@@ -64,6 +54,12 @@ public class ControllerAdvisor {
     public ResponseEntity<ExceptionResponse> handleInvalidAgeException(InvalidDataException exception) {
         return ResponseEntity.badRequest().body(new ExceptionResponse(
                 exception.getMessage(), HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(InvalidTokenException.class)
+    public ResponseEntity<ExceptionResponse> handleInvalidTokenException() {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ExceptionResponse(
+                ConstantesDominio.AUTENTICACION_FALLIDA, HttpStatus.BAD_REQUEST.toString(), LocalDateTime.now()));
     }
 
 }

@@ -1,55 +1,54 @@
 package com.bootcamp.emazon.transaccion_micro.domain.service;
 
 import com.bootcamp.emazon.transaccion_micro.domain.exception.EmptyFieldException;
-import com.bootcamp.emazon.transaccion_micro.domain.exception.LimitExceededException;
+import com.bootcamp.emazon.transaccion_micro.domain.exception.InvalidDataException;
 
-import static java.util.Objects.requireNonNull;
+import java.time.LocalDateTime;
 
 public class Suministro {
-    private final long id;
-    private final String nombre;
-    private Articulo articulo;
-    int cantidad;
+    private final Long id;
+    private final Long articuloId;
+    private LocalDateTime fechaDeIngreso;
+    private Integer cantidad;
 
-    public Suministro(long id, String nombre, Articulo articulo, int cantidad) {
-
-        if (nombre == null || nombre.trim().isEmpty()) {
-            throw new EmptyFieldException(ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE);
+    public Suministro(Long id, Long articuloId, Integer cantidad) {
+        // Validar que el ID del artículo no sea nulo
+        if (articuloId == null) {
+            throw new EmptyFieldException(ConstantesDominio.CAMPO_ID_VACIO);
         }
 
-        if (nombre.trim().length() > ConstantesDominio.MAX_NOMBRE_TAMANO) {
-            throw new LimitExceededException(ConstantesDominio.CAMPO_NOMBRE_TAMANO_EXCEDIDO_MENSAJE);
+        // Validar que la cantidad no sea nula ni menor o igual a 0
+        if ((cantidad == null) || (cantidad <= 0)) {
+            throw new InvalidDataException(ConstantesDominio.CAMPO_CANTIDAD_POSITIVO);
         }
 
         //Asignacion de variables
         this.id = id;
-        this.nombre = requireNonNull(nombre, ConstantesDominio.CAMPO_NOMBRE_NULL_MENSAJE);
+        this.articuloId = articuloId;
         this.cantidad = cantidad;
-        this.articulo = articulo;
     }
 
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-
-    public String getNombre() {
-        return nombre;
+    public void setFechaDeIngreso(LocalDateTime fechaDeIngreso) {
+        this.fechaDeIngreso = fechaDeIngreso;
     }
 
-
-    public Articulo getArticulo() {
-        return articulo;
+    public Long getArticuloId() {
+        return articuloId;
     }
 
-    public void setArticulo(Articulo articulo) {
-        this.articulo = articulo;
+    public LocalDateTime getFechaDeIngreso() {
+        return fechaDeIngreso;
     }
 
-    public int getCantidad() {
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Integer getCantidad() {
         return cantidad;
     }
-
-    
 }

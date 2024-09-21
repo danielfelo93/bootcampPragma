@@ -10,6 +10,7 @@ import org.mapstruct.Mapping;
 public interface IArticuloRequestMapper {
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "cantidad", ignore = true)
     @Mapping(target = "categorias", ignore = true)
     @Mapping(target = "marca", ignore = true)
     Articulo addRequestToArticulo(AddArticuloRequest addArticuloRequest);

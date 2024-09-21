@@ -1,6 +1,7 @@
 package com.bootcamp.emazon.transaccion_micro.config.security;
 
 
+import com.bootcamp.emazon.transaccion_micro.config.RequestSecurityContext;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -35,12 +36,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 String username = jwtService.getUsernameFromToken(token);
 
                 // Verificar si el username no es nulo y no hay una autenticación ya existente en el contexto de seguridad
-                if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
-                    // Validar el token sin cargar UserDetails
-                    if (jwtService.isTokenValid(token)) {
+                if (username != null && SecurityContextHolder.getContext().getAuthentication() == null && jwtService.isTokenValid(token)) {
                         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                                username, // Se usa el username directamente
+                                username,
                                 null,
                                 null); // No hay authorities para este caso específico
 
@@ -48,8 +46,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                         // Establecer el token de autenticación en el contexto de seguridad
                         SecurityContextHolder.getContext().setAuthentication(authToken);
+                        // Establecer el token en el contexto de seguridad
+                        RequestSecurityContext.setToken(token);
                     }
-                }
+
             } catch (Exception e) {
                 // Manejo de excepciones sin exponer detalles sensibles
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

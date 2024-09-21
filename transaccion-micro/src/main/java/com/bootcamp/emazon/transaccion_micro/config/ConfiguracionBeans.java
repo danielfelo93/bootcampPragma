@@ -1,12 +1,12 @@
 package com.bootcamp.emazon.transaccion_micro.config;
 
-
-import com.bootcamp.emazon.transaccion_micro.domain.api.IArticuloServicePort;
-import com.bootcamp.emazon.transaccion_micro.domain.api.usecase.ArticuloUseCase;
-import com.bootcamp.emazon.transaccion_micro.domain.spi.IArticuloPersistencePort;
-import com.bootcamp.emazon.transaccion_micro.driven.adapter.ArticuloAdaptador;
-import com.bootcamp.emazon.transaccion_micro.driven.mapper.IArticuloEntityMapper;
-import com.bootcamp.emazon.transaccion_micro.driven.repository.IArticuloRepository;
+import com.bootcamp.emazon.transaccion_micro.domain.api.ISuministroServicePort;
+import com.bootcamp.emazon.transaccion_micro.domain.api.usecase.SuministroService;
+import com.bootcamp.emazon.transaccion_micro.domain.spi.ISuministroPersistencePort;
+import com.bootcamp.emazon.transaccion_micro.driven.adapter.SuministroAdaptador;
+import com.bootcamp.emazon.transaccion_micro.driven.mapper.ISuministroEntityMapper;
+import com.bootcamp.emazon.transaccion_micro.driven.repository.ISuministroRepository;
+import com.bootcamp.emazon.transaccion_micro.driving.controller.StockClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,17 +15,17 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ConfiguracionBeans {
 
-    private final IArticuloEntityMapper articuloEntityMapper;
-    private final IArticuloRepository articuloRepository;
-
+    private final ISuministroEntityMapper suministroEntityMapper;
+    private final ISuministroRepository suministroRepository;
+    private final StockClient stockClient;
 
     @Bean
-    public IArticuloPersistencePort articuloPersistencePort() {
-        return new ArticuloAdaptador(articuloRepository, articuloEntityMapper);
+    public ISuministroPersistencePort suministroPersistencePort() {
+        return new SuministroAdaptador(suministroRepository, suministroEntityMapper);
     }
 
     @Bean
-    public IArticuloServicePort articuloServicePort() {
-        return new ArticuloUseCase(articuloPersistencePort());
+    public ISuministroServicePort suministroServicePort() {
+        return new SuministroService(suministroPersistencePort(), stockClient);
     }
 }

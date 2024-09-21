@@ -1,7 +1,6 @@
 package com.bootcamp.emazon.user_micro.domain.api.usecase;
 
 import com.bootcamp.emazon.user_micro.config.security.JwtService;
-import com.bootcamp.emazon.user_micro.config.security.UserRole;
 import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
 import com.bootcamp.emazon.user_micro.domain.service.User;
 import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
@@ -25,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
+class UserServiceTest {
 
     @Mock
     private IUserPersistencePort userPersistencePort;
@@ -41,8 +40,8 @@ public class UserServiceTest {
 
     @InjectMocks
     private UserService userService;
-
     private User user1;
+    private LocalDate fechaNueva;
 
     @BeforeEach
     void setUp() {
@@ -54,9 +53,10 @@ public class UserServiceTest {
                 "+290000000000",
                 LocalDate.of(2000, 1, 1),
                 "daniel@gmail.com",
-                "plainpassword",
-                UserRole.AUX_BODEGA
+                "plainpassword"
         );
+
+        fechaNueva = LocalDate.now().minusYears(17);
 
         lenient().when(passwordEncoder.encode(anyString())).thenReturn("encodedpassword");
         userService = new UserService(userPersistencePort, passwordEncoder, jwtService, authenticationManager);
@@ -98,7 +98,7 @@ public class UserServiceTest {
     @Test
     void shouldThrowInvalidDataExceptionWhenUnderage() {
         // Given
-        assertThrows(InvalidDataException.class, () -> user1.setFechaNacimiento(LocalDate.now().minusYears(17)));
+        assertThrows(InvalidDataException.class, () -> user1.setFechaNacimiento(fechaNueva));
     }
 
     @Test

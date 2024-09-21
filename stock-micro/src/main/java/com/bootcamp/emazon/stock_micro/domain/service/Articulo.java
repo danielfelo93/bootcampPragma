@@ -12,7 +12,7 @@ public class Articulo {
     private final long id;
     private final String nombre;
     private final String descripcion;
-    private final int cantidad;
+    private int cantidad;
     private final BigDecimal precio;
     private Set<Categoria> categorias;
     private Marca marca;
@@ -81,6 +81,7 @@ public class Articulo {
         return cantidad;
     }
 
+    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
 
     public BigDecimal getPrecio() {
         return precio;

@@ -34,8 +34,8 @@ public class ConfiguracionSeguridad {
         httpSecurity
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/admin/**").hasRole("ADMIN");
-                    auth.requestMatchers("/bodega/**").hasAnyRole("AUX_BODEGA", "ADMIN");
+                    auth.requestMatchers("*/admin/").hasRole("ADMIN");
+                    auth.requestMatchers("*/bodega/").hasAnyRole("AUX_BODEGA", "ADMIN");
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(sessionManager -> sessionManager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

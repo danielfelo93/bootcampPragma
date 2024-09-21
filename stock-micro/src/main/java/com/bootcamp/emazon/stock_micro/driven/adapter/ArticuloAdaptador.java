@@ -6,7 +6,6 @@ import com.bootcamp.emazon.stock_micro.domain.spi.IArticuloPersistencePort;
 import com.bootcamp.emazon.stock_micro.driven.entity.ArticuloEntity;
 import com.bootcamp.emazon.stock_micro.driven.exceptions.NoDataFoundException;
 import com.bootcamp.emazon.stock_micro.driven.exceptions.ProductAlreadyExistsException;
-import com.bootcamp.emazon.stock_micro.driven.exceptions.ElementNotFoundException;
 import com.bootcamp.emazon.stock_micro.driven.mapper.IArticuloEntityMapper;
 import com.bootcamp.emazon.stock_micro.driven.repository.IArticuloRepository;
 import com.bootcamp.emazon.stock_micro.driving.dto.response.PagedResponse;
@@ -17,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @RequiredArgsConstructor
@@ -39,7 +39,7 @@ public class ArticuloAdaptador implements IArticuloPersistencePort {
     }
 
     @Override
-    public void guardarArticulo(Articulo articulo) {
+    public void crearArticulo(Articulo articulo) {
         if (articuloRepository.findByNombre(articulo.getNombre()).isPresent()) {
             throw new ProductAlreadyExistsException(Constants.ARTICULO_YA_EXISTE_EXCEPCION_MENSAJE);
         }
@@ -47,14 +47,19 @@ public class ArticuloAdaptador implements IArticuloPersistencePort {
         logger.info("ID after save: " + savedEntity.getId());
     }
 
-
     @Override
-    public Articulo obtenerArticulo(String nombre) {
-        ArticuloEntity articulo = articuloRepository.findByNombreContaining(nombre).orElseThrow(ElementNotFoundException::new);
-        return articuloEntityMapper.entityToArticulo(articulo);
+    public void agregarArticulos(Articulo articulo) {
+        Optional<ArticuloEntity> existingEntity = articuloRepository.findByNombre(articulo.getNombre());
+        if (existingEntity.isPresent()) {
+            ArticuloEntity articuloEntity = existingEntity.get();
+            articuloEntity.setCantidad(articulo.getCantidad());
+            articuloRepository.save(articuloEntity);
+        } else {
+            ArticuloEntity savedEntity = articuloRepository.save(articuloEntityMapper.articuloToArticuloEntity(articulo));
+            logger.info("ID after save: " + savedEntity.getId());
+        }
     }
 
-    
     @Override
     public PagedResponse<Articulo> listarArticulos(int page, int size, String order) {
         Pageable pageable = getPageable(page, size, order);
@@ -111,5 +116,12 @@ public class ArticuloAdaptador implements IArticuloPersistencePort {
                 articuloPage.getTotalPages(),
                 articuloPage.isLast()
         );
+    }
+
+    @Override
+    public Optional<Articulo> obtenerArticuloPorId(long id) {
+
+        return articuloRepository.findById(id)
+                .map(articuloEntityMapper::entityToArticulo);
     }
 }
