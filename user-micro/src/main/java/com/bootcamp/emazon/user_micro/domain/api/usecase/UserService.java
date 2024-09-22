@@ -1,5 +1,7 @@
 package com.bootcamp.emazon.user_micro.domain.api.usecase;
 
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
+import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
 import com.bootcamp.emazon.user_micro.domain.exception.InvalidTokenException;
 import com.bootcamp.emazon.user_micro.domain.service.ConstantesDominio;
 import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
@@ -13,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.EnumSet;
 import java.util.Optional;
 
 public class UserService implements IUserServicePort {
@@ -38,6 +41,9 @@ public class UserService implements IUserServicePort {
     public String registrarUsuario(User user) {
         if (userPersistencePort.existsByCorreo(user.getCorreo())) {
             throw new UserAlreadyExistsException(ConstantesDominio.CORREO_REGISTRADO_MENSAJE);
+        }
+        if (user.getRol() == null || !EnumSet.allOf(UserRole.class).contains(user.getRol())) {
+            throw new InvalidDataException(ConstantesDominio.ROL_INVALIDO_MENSAJE);
         }
         user.setContrasena(passwordEncoder.encode(user.getContrasena()));
         userPersistencePort.guardarUsuario(user);

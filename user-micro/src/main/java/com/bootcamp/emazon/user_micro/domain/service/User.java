@@ -23,7 +23,6 @@ public class User {
                 String celular, LocalDate fechaNacimiento, String correo,
                 String contrasena, UserRole rol) {
 
-
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -130,7 +129,5 @@ public class User {
         return rol;
     }
 
-    public void setRol(UserRole rol) {
-        this.rol = rol;
-    }
+    public void setRol(UserRole rol) { this.rol = rol; }
 }

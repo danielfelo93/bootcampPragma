@@ -9,6 +9,7 @@ public final class ConstantesDominio {
     public static final String AUTENTICACION_FALLIDA = "Token de autenticación inválido";
     public static final String FECHANACIMIENTO_NULL_MENSAJE = "La fecha de nacimiento no puede ser nula.";
     public static final String CORREO_INVALIDO_MENSAJE = "Correo inválido.";
+    public static final String ROL_INVALIDO_MENSAJE = "Rol inválido. Escribe uno de estos roles: 'ROLE_ADMIN', 'ROLE_AUX_BODEGA', 'ROLE_CLIENT'.";
     public static final String CORREO_REGISTRADO_MENSAJE = "El correo electrónico ya está registrado.";
     public static final String CELULAR_INVALIDO_MENSAJE = "Número de celular inválido";
     public static final String DOCUMENTO_INVALIDO_MENSAJE = "Documento de identidad inválido";

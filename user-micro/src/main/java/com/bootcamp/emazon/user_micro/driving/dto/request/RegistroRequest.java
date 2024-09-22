@@ -45,6 +45,7 @@ public class RegistroRequest {
     @NotBlank(message = "Contraseña es obligatoria")
     private String contrasena;
 
+    @NotBlank(message = "Rol es obligatorio")
     private UserRole rol;
 
 }

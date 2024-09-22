@@ -1,7 +1,9 @@
 package com.bootcamp.emazon.user_micro.domain.api.usecase;
 
 import com.bootcamp.emazon.user_micro.config.security.JwtService;
+import com.bootcamp.emazon.user_micro.config.security.UserRole;
 import com.bootcamp.emazon.user_micro.domain.exception.InvalidDataException;
+import com.bootcamp.emazon.user_micro.domain.service.ConstantesDominio;
 import com.bootcamp.emazon.user_micro.domain.service.User;
 import com.bootcamp.emazon.user_micro.domain.spi.IUserPersistencePort;
 import com.bootcamp.emazon.user_micro.driving.dto.request.AutenticacionRequest;
@@ -41,6 +43,7 @@ class UserServiceTest {
     @InjectMocks
     private UserService userService;
     private User user1;
+    private User user2;
     private LocalDate fechaNueva;
 
     @BeforeEach
@@ -53,7 +56,20 @@ class UserServiceTest {
                 "+290000000000",
                 LocalDate.of(2000, 1, 1),
                 "daniel@gmail.com",
-                "plainpassword"
+                "plainpassword",
+                UserRole.AUX_BODEGA
+        );
+
+        user2 = new User(
+                1L,
+                "Daniel",
+                "Londono",
+                "8602879932",
+                "+290000000000",
+                LocalDate.of(2000, 1, 1),
+                "daniel@gmail.com",
+                "plainpassword",
+                null
         );
 
         fechaNueva = LocalDate.now().minusYears(17);
@@ -76,6 +92,18 @@ class UserServiceTest {
         assertEquals("mocked-jwt-token", registeredUser);
         verify(userPersistencePort, times(1)).guardarUsuario(any(User.class));
         verify(passwordEncoder, times(1)).encode(anyString());
+    }
+
+    @Test
+    void shouldThrowInvalidDataExceptionWhenInvalidRol() {
+        // When & Then
+        InvalidDataException exception = assertThrows(
+                InvalidDataException.class,
+                () -> userService.registrarUsuario(user2)  // Invocar el metodo que dispara la validación
+        );
+
+        // Verificar el mensaje de error
+        assertEquals(ConstantesDominio.ROL_INVALIDO_MENSAJE, exception.getMessage());
     }
 
     @Test
